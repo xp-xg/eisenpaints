@@ -29,6 +29,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8 font-medium">
               <Link href="/" className="text-brand-navy hover:text-life-cyan transition-colors">Home</Link>
+              <Link href="/about" className="text-brand-navy hover:text-life-cyan transition-colors">About</Link>
               <Link href="/products" className="text-brand-navy hover:text-life-cyan transition-colors">Products</Link>
               <Link href="/projects" className="text-brand-navy hover:text-life-cyan transition-colors">Projects</Link>
               <Link href="/contact" className="text-brand-navy hover:text-life-cyan transition-colors">Contact</Link>
@@ -73,6 +74,13 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               Home
+            </Link>
+            <Link 
+              href="/about" 
+              className="block px-3 py-2 text-brand-navy hover:bg-gray-50 rounded-md"
+              onClick={() => setIsOpen(false)}
+            >
+              About
             </Link>
             <Link 
               href="/products" 

@@ -43,13 +43,35 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {[
-              { title: "Best Quality", icon: "🏆", desc: "Formulated with premium raw materials for lasting protection." },
-              { title: "Color Consistency", icon: "🎨", desc: "Perfect batch-to-batch color matching for large scale projects." },
-              { title: "High Coverage", icon: "📐", desc: "Superior Sqm/Litre coverage for maximum efficiency and value." },
-              { title: "Customization", icon: "⚙️", desc: "Tailored solutions to meet specific architectural requirements." }
+              { 
+                title: "Best Quality", 
+                icon: "🏆", 
+                desc: "Our paints are formulated to provide rich colours, smooth finishes and longlasting impressions.",
+                color: "bg-life-cyan"
+              },
+              { 
+                title: "Colour Consistency", 
+                icon: "🎨", 
+                desc: "We ensure that every batch delivers a consistent and uniform shade for a flawless finish.",
+                color: "bg-brand-gold"
+              },
+              { 
+                title: "High Coverage /Sqm", 
+                icon: "📐", 
+                desc: "Get more out of every can with excellent coverage providing greater value for your investment.",
+                color: "bg-life-red"
+              },
+              { 
+                title: "Customization", 
+                icon: "⚙️", 
+                desc: "Choose from our vast range of shades or let us create a custom color that perfectly matches your vision.",
+                color: "bg-life-lime"
+              }
             ].map((item, idx) => (
-              <div key={idx} className="group p-8 bg-gray-50 rounded-2xl hover:bg-brand-navy hover:text-white transition-all duration-500">
-                <div className="text-4xl mb-6">{item.icon}</div>
+              <div key={idx} className="group p-8 bg-gray-50 rounded-2xl hover:bg-brand-navy hover:text-white transition-all duration-500 border border-transparent hover:border-gray-200">
+                <div className={`w-12 h-12 ${item.color} rounded-lg flex items-center justify-center text-white text-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
+                  {item.icon}
+                </div>
                 <h3 className="text-xl font-bold mb-4">{item.title}</h3>
                 <p className="text-sm opacity-80 leading-relaxed">{item.desc}</p>
               </div>
@@ -92,44 +114,83 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1 relative">
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
                 <Image 
-                  src="/images/interior-showcase.png" 
-                  alt="Production Precision" 
-                  width={600} 
+                  src="/images/partnerships/covestro-partnership.png" 
+                  alt="Eisen Paints and Covestro Strategic Partnership" 
+                  width={800} 
                   height={800} 
-                  className="object-cover"
+                  className="w-full h-auto object-cover"
                 />
               </div>
               {/* Decorative elements */}
-              <div className="absolute -top-10 -left-10 w-40 h-40 bg-brand-gold/20 rounded-full blur-3xl z-0"></div>
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-life-cyan/20 rounded-full blur-3xl z-0"></div>
+              <div className="absolute -top-10 -left-10 w-40 h-40 bg-brand-navy/5 rounded-full blur-3xl z-0"></div>
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-life-cyan/10 rounded-full blur-3xl z-0"></div>
             </div>
             
             <div className="flex-1">
-              <div className="inline-block px-4 py-1 bg-brand-navy text-white text-xs font-bold rounded-full mb-6">
+              <div className="inline-block px-4 py-1 bg-brand-navy text-white text-xs font-bold rounded-full mb-6 tracking-wider">
                 STRATEGIC PARTNERSHIP
               </div>
               <h2 className="text-4xl font-bold text-brand-navy mb-8 leading-tight">
-                Crafting Excellence with <span className="text-life-cyan">COVESTRO</span>
+                Our Crafting Journey with <span className="text-life-cyan">COVESTRO</span>
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Our partnership with COVESTRO ensures that every drop of Eisen Paint is formulated with premium raw materials and production precision that meets global standards.
-              </p>
-              <div className="space-y-6">
+              <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+                <p>
+                  Our journey began with <span className="font-bold text-brand-navy">COVESTRO</span>, one of the world&apos;s top German chemical manufacturers, where we gained deep exposure to production precision, innovation, and the power of premium raw materials.
+                </p>
+                <p>
+                  This collaboration has transformed our production processes, instilling a culture of quality and product excellence that defines every bucket of Eisen Paint.
+                </p>
+                <p className="font-medium text-brand-navy italic border-l-4 border-life-cyan pl-6 py-2">
+                  &quot;Excellence is no longer a goal; it&apos;s our DNA.&quot;
+                </p>
+              </div>
+              
+              <div className="mt-10 grid grid-cols-2 gap-6">
                 {[
-                  "German technology integration in every batch",
-                  "Rigorous quality control and testing",
-                  "Sustainable and eco-friendly formulations",
-                  "Optimized for the African climatic conditions"
-                ].map((point, idx) => (
-                  <div key={idx} className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 w-6 h-6 bg-life-lime rounded-full flex items-center justify-center text-white text-xs">
-                      ✓
-                    </div>
-                    <span className="font-medium text-brand-navy">{point}</span>
+                  { label: "Precision", icon: "🎯" },
+                  { label: "Innovation", icon: "💡" },
+                  { label: "German Tech", icon: "🇩🇪" },
+                  { label: "Kenyan Pride", icon: "🇰🇪" }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl border border-gray-100">
+                    <span className="text-2xl">{item.icon}</span>
+                    <span className="font-bold text-brand-navy text-sm uppercase tracking-wide">{item.label}</span>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Teaser */}
+      <section className="py-24 bg-life-cyan/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center gap-16">
+            <div className="flex-1">
+              <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-8">
+                Bring <span className="text-life-cyan">life</span> to your space
+              </h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Eisen Paints aspires to be the most trusted, innovative, and painter-empowering paint brand in Africa – delivering beauty, protection, and purpose in every coat.
+              </p>
+              <Link 
+                href="/about" 
+                className="inline-flex items-center justify-center px-8 py-4 bg-brand-navy text-white font-bold rounded-full hover:bg-life-cyan hover:text-brand-navy transition-all duration-300 shadow-xl"
+              >
+                Learn Our Story
+              </Link>
+            </div>
+            <div className="flex-1 relative">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white p-2 rounded-2xl shadow-xl transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                   <Image src="/images/projects/Eisen_completed_project3.jpeg" alt="Project" width={300} height={400} className="rounded-xl" />
+                </div>
+                <div className="bg-white p-2 rounded-2xl shadow-xl transform rotate-6 hover:rotate-0 transition-transform duration-500 mt-12">
+                   <Image src="/images/projects/Eisen_completed_project4.jpeg" alt="Project" width={300} height={400} className="rounded-xl" />
+                </div>
               </div>
             </div>
           </div>
