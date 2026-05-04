@@ -37,7 +37,36 @@ The website follows the Eisen Paints brand guidelines:
 - **Image Optimization**: Images are set to `unoptimized: true` in `next.config.ts` to ensure compatibility with static hosting.
 - **Responsiveness**: Mobile-first approach using Tailwind's responsive utilities.
 
-## 5. Build and Deployment
+## 5. Key Features (New Enhancements)
+
+### 📐 Paint Calculator
+- **Logic**: Calculates wall area (2 * (L+W) * H) and optional ceiling area (L*W), then subtracts average door (2sqm) and window (1.5sqm) areas.
+- **Component**: `src/components/PaintCalculator.tsx`.
+- **Page**: `/calculator`.
+
+### 🎨 Color Visualizer
+- **Logic**: Real-time room preview using CSS blend modes (`multiply`) to apply paint colors to lifestyle images.
+- **Interactive**: Users can adjust intensity and select from the core Eisen color palette.
+- **Page**: `/visualizer`.
+
+### 🔍 Advanced Product Finder & Filtering
+- **Dynamic Filtering**: Users can filter products by Category, Surface, and Finish.
+- **Discovery**: Integrated CTA for an AI-guided product finder to simplify selection.
+- **Page**: `/products`.
+
+### 📚 Resource & Support Center
+- **Folder Structure**: `public/documents/` (Catalogs, TDS, SDS).
+- **Download Hub**: Centralized page for technical and safety documentation.
+- **Page**: `/resources`.
+
+### 📍 Dealer Locator
+- **Database**: Organized by city and region (Eldoret, Nakuru, Nairobi).
+- **Functionality**: One-click map navigation and direct calling.
+- **Page**: `/find-a-dealer`.
+
+---
+
+## 6. Build and Deployment
 The project can be built using:
 ```bash
 npm run build

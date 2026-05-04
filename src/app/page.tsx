@@ -109,7 +109,63 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partnership Section */}
+      {/* Paint Calculator CTA */}
+      <section className="py-24 bg-brand-navy relative overflow-hidden">
+        {/* Background Accents */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-life-cyan/5 -skew-x-12 transform translate-x-20"></div>
+        <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-brand-gold/5 rounded-full blur-3xl"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Not sure how much paint <br className="hidden md:block" /> you need?
+              </h2>
+              <p className="text-xl text-white/80 mb-10 leading-relaxed">
+                Our interactive paint calculator helps you estimate the exact quantity required for your project, saving you time and money.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link 
+                  href="/calculator" 
+                  className="px-8 py-4 bg-brand-gold text-brand-navy font-bold rounded-full hover:bg-white transition-all duration-300 shadow-xl"
+                >
+                  Use Paint Calculator
+                </Link>
+                <Link 
+                  href="/products" 
+                  className="px-8 py-4 border-2 border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition-all duration-300"
+                >
+                  Browse Products
+                </Link>
+              </div>
+            </div>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-life-cyan rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+              <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 shadow-2xl relative overflow-hidden">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="w-12 h-12 bg-brand-gold rounded-xl flex items-center justify-center text-brand-navy text-2xl font-bold">
+                    📐
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-lg">Instant Estimation</div>
+                    <div className="text-white/60 text-sm">Professional accuracy</div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+                    <div className="h-full w-3/4 bg-brand-gold"></div>
+                  </div>
+                  <div className="flex justify-between text-white/80 text-sm">
+                    <span>Precision</span>
+                    <span>99%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-16">
