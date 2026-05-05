@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const locations = [
   {
@@ -6,17 +7,10 @@ const locations = [
     region: "Rift Valley",
     dealers: [
       {
-        name: "Eisen Paints HQ & Main Depot",
-        address: "Kimumu, Iten Road",
-        contact: "+254 700 000 000",
-        type: "Manufacturer Outlet",
-        mapUrl: "https://maps.google.com"
-      },
-      {
-        name: "Eldoret Town Center Branch",
-        address: "Ronald Ngala Street",
-        contact: "+254 711 000 000",
-        type: "Retail Store",
+        name: "Nairobi Road Business Centre",
+        address: "Opposite Nairobi Rd. T-Junction, Pioneer",
+        contact: "+254 113 713 285",
+        type: "Branch Office",
         mapUrl: "https://maps.google.com"
       }
     ]
@@ -26,10 +20,10 @@ const locations = [
     region: "Central Rift",
     dealers: [
       {
-        name: "Nakuru Industrial Area Depot",
-        address: "George Morara Road",
-        contact: "+254 722 000 000",
-        type: "Distribution Center",
+        name: "Eisen Industries Ltd HQ",
+        address: "Printing press road, industrial area",
+        contact: "+254 758 094 985",
+        type: "Manufacturing & HQ",
         mapUrl: "https://maps.google.com"
       }
     ]
@@ -58,11 +52,18 @@ export default function DealerLocatorPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-brand-navy overflow-hidden text-white">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-gold/10 skew-x-12 transform translate-x-20"></div>
+      {/* Header with Carousel Image */}
+      <section className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
+        <Image 
+          src="/images/carousel/corousel-dealers.png"
+          alt="Find a Dealer"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-brand-navy/60"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-black mb-6">Find a <span className="text-brand-gold">Dealer</span></h1>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-6">Find a <span className="text-brand-gold">Dealer</span></h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Get professional advice and purchase Eisen Paints products at an authorized dealer near you.
           </p>

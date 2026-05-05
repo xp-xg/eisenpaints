@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import Image from 'next/image';
 import ProductCard from '@/components/ProductCard';
 
 const allProducts = [
@@ -93,11 +94,18 @@ export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       
-      {/* Header */}
-      <section className="pt-32 pb-20 bg-brand-navy overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-gold/5 skew-x-12 transform translate-x-20"></div>
+      {/* Header with Carousel Image */}
+      <section className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
+        <Image 
+          src="/images/carousel/corousel- ourproducts.png"
+          alt="Our Products"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-brand-navy/60"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-6">Product Catalog</h1>
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">Product Catalog</h1>
           <p className="text-life-cyan text-xl font-medium tracking-widest uppercase">
             Precision Engineering • Lasting Impressions
           </p>

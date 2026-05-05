@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import PaintCalculator from '@/components/PaintCalculator';
 
 export const metadata = {
@@ -10,9 +11,16 @@ export default function CalculatorPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-brand-navy overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-gold/10 skew-x-12 transform translate-x-20"></div>
+      {/* Header with Carousel Image */}
+      <section className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
+        <Image 
+          src="/images/carousel/corousel-calculator.png"
+          alt="Paint Calculator"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-brand-navy/60"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl font-black text-white mb-6">
             Plan Your Project <span className="text-brand-gold">Precisely</span>

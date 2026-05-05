@@ -8,7 +8,7 @@ const Hero = () => {
       {/* Background with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/interior-showcase.png"
+          src="/images/carousel/hero-1.png"
           alt="Modern Painted Interior"
           fill
           className="object-cover"

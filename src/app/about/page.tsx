@@ -3,11 +3,16 @@ import Image from 'next/image';
 export default function AboutPage() {
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="relative py-24 bg-brand-navy overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
-        </div>
+      {/* Header with Carousel Image */}
+      <section className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
+        <Image 
+          src="/images/carousel/corousel-aboutus.png"
+          alt="About Eisen Paints"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-brand-navy/60"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
             Bring <span className="text-life-cyan">life</span> to your space

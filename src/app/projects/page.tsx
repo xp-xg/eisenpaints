@@ -112,14 +112,22 @@ const projects = [
 
 const ProjectsPage = () => {
   return (
-    <div className="pt-32 pb-24 bg-white">
-      {/* Header */}
-      <div className="py-20 mb-16 text-center">
-        <div className="flex flex-col items-center justify-center">
-          <span className="text-2xl md:text-3xl font-medium text-brand-navy italic mb-2">Our Completed</span>
-          <h1 className="text-6xl md:text-8xl font-black text-life-cyan uppercase tracking-tighter">Projects</h1>
+    <div className="pt-20 bg-white">
+      {/* Header with Carousel Image */}
+      <section className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden mb-16">
+        <Image 
+          src="/images/carousel/corousel-projects.png"
+          alt="Our Projects"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-brand-navy/60"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <span className="text-2xl md:text-3xl font-medium text-brand-gold italic mb-2 block">Our Completed</span>
+          <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter">Projects</h1>
         </div>
-      </div>
+      </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">

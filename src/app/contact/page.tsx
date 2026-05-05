@@ -1,22 +1,28 @@
 import React from 'react';
+import Image from 'next/image';
 
 const ContactPage = () => {
   return (
-    <div className="pt-32 pb-24 bg-white">
-      {/* Header */}
-      <div className="bg-brand-navy py-24 mb-16 relative overflow-hidden">
+    <div className="pt-20 pb-24 bg-white">
+      {/* Header with Carousel Image */}
+      <div className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
+        <Image 
+          src="/images/carousel/corousel-contact.png"
+          alt="Contact Us"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-brand-navy/60"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">Contact Us</h1>
           <p className="text-life-cyan text-xl font-medium uppercase tracking-[0.2em]">
             Let's Bring Life to Your Space
           </p>
         </div>
-        {/* Decorative Circles */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-life-cyan/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-red/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           {/* Contact Info */}
           <div>
@@ -37,12 +43,12 @@ const ContactPage = () => {
                   <h3 className="text-xl font-bold text-brand-navy mb-2">Our Locations</h3>
                   <div className="space-y-4 text-gray-600">
                     <div>
-                      <strong className="text-brand-navy block">Nakuru:</strong>
-                      Nakuru Town, Main Business District
+                      <strong className="text-brand-navy block">Nakuru HQ:</strong>
+                      Printing Press Road, Industrial Area, Nakuru City
                     </div>
                     <div>
-                      <strong className="text-brand-navy block">Eldoret:</strong>
-                      Eldoret Town, Industrial Area
+                      <strong className="text-brand-navy block">Eldoret Branch:</strong>
+                      Nairobi Road Business Centre, Pioneer
                     </div>
                   </div>
                 </div>
@@ -58,8 +64,8 @@ const ContactPage = () => {
                   <h3 className="text-xl font-bold text-brand-navy mb-2">Email & Phone</h3>
                   <div className="space-y-2 text-gray-600">
                     <p>info@eisenpaints.com</p>
-                    <p>sales@eisenpaints.com</p>
-                    <p>+254 700 000 000</p>
+                    <p>+254 758 094 985 (Nakuru HQ)</p>
+                    <p>+254 113 713 285 (Eldoret Branch)</p>
                   </div>
                 </div>
               </div>
@@ -114,6 +120,20 @@ const ContactPage = () => {
             </form>
           </div>
         </div>
+      </div>
+
+      {/* Map Section */}
+      <div className="mt-24 h-[500px] w-full rounded-[2.5rem] overflow-hidden shadow-2xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3989.771452636718!2d36.0544243!3d-0.2854342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMTcnMDcuNiJTIDM2wrAwMycyNS4yIkU!5e0!3m2!1sen!2ske!4v1714896123456!5m2!1sen!2ske" 
+          width="100%" 
+          height="100%" 
+          style={{ border: 0 }} 
+          allowFullScreen 
+          loading="lazy" 
+          referrerPolicy="no-referrer-when-downgrade"
+          className="grayscale hover:grayscale-0 transition-all duration-700"
+        ></iframe>
       </div>
     </div>
   );
