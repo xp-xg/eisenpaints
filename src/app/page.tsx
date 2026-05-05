@@ -51,52 +51,67 @@ export default function Home() {
     <div className="flex flex-col w-full">
       <Hero />
       
-      {/* Value Proposition */}
-      <section className="py-24 bg-white">
+      {/* Value Proposition - Why Us */}
+      <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-brand-navy mb-4">Why Eisen Paints?</h2>
-            <div className="w-24 h-1 bg-life-cyan mx-auto mb-6"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Combining German precision with Kenyan pride to deliver the best coating solutions for Africa.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {[
-              { 
-                title: "Best Quality", 
-                icon: "🏆", 
-                desc: "Our paints are formulated to provide rich colours, smooth finishes and longlasting impressions.",
-                color: "bg-life-cyan"
-              },
-              { 
-                title: "Colour Consistency", 
-                icon: "🎨", 
-                desc: "We ensure that every batch delivers a consistent and uniform shade for a flawless finish.",
-                color: "bg-brand-gold"
-              },
-              { 
-                title: "High Coverage /Sqm", 
-                icon: "📐", 
-                desc: "Get more out of every can with excellent coverage providing greater value for your investment.",
-                color: "bg-life-red"
-              },
-              { 
-                title: "Customization", 
-                icon: "⚙️", 
-                desc: "Choose from our vast range of shades or let us create a custom color that perfectly matches your vision.",
-                color: "bg-life-lime"
-              }
-            ].map((item, idx) => (
-              <div key={idx} className="group p-8 bg-gray-50 rounded-2xl hover:bg-brand-navy hover:text-white transition-all duration-500 border border-transparent hover:border-gray-200">
-                <div className={`w-12 h-12 ${item.color} rounded-lg flex items-center justify-center text-white text-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
-                  {item.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-                <p className="text-sm opacity-80 leading-relaxed">{item.desc}</p>
+          <div className="flex flex-col lg:flex-row items-stretch gap-16">
+            {/* Image Side */}
+            <div className="flex-1 relative w-full">
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white w-full">
+                <Image
+                  src="/images/why-us/why-us-wu.png"
+                  alt="Why Choose Eisen Paints"
+                  width={800}
+                  height={800}
+                  className="w-full h-full object-cover"
+                />
               </div>
-            ))}
+              {/* Decorative elements */}
+              <div className="absolute -top-10 -left-10 w-40 h-40 bg-life-cyan/20 rounded-full blur-3xl z-0"></div>
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-brand-gold/20 rounded-full blur-3xl z-0"></div>
+            </div>
+
+            {/* Content Side */}
+            <div className="flex-1">
+              <div className="inline-block px-4 py-1 bg-life-cyan text-brand-navy text-xs font-bold rounded-full mb-6 tracking-wider">
+                WHY EISEN PAINTS?
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-8 leading-tight">
+                Crafted for <br /><span className="text-[#f05c42]">Lasting Excellence</span>
+              </h2>
+              <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+                <p>
+                  Combining German precision with Kenyan pride, Eisen Paints delivers coating solutions built for Africa&apos;s climate, culture, and ambition — from silky interior finishes to all-weather exterior protection.
+                </p>
+                <p>
+                  Every batch is quality-tested to ensure rich colour consistency, superior coverage, and finishes that leave a lasting impression.
+                </p>
+              </div>
+
+              <div className="mt-10 grid grid-cols-2 gap-6 mb-10">
+                {[
+                  { label: "Best Quality", icon: "🏆" },
+                  { label: "Colour Consistency", icon: "🎨" },
+                  { label: "High Coverage /Sqm", icon: "📐" },
+                  { label: "Customization", icon: "⚙️" },
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
+                    <span className="text-2xl">{item.icon}</span>
+                    <span className="font-bold text-brand-navy text-sm uppercase tracking-wide">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <Link
+                href="/about"
+                className="inline-flex items-center px-8 py-4 bg-brand-navy text-white font-bold rounded-full hover:bg-[#f05c42] transition-colors shadow-lg"
+              >
+                Learn Our Story
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
