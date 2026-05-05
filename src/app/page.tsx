@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import ClientCarousel from "@/components/ClientCarousel";
-import ProductCard from "@/components/ProductCard";
+import FeaturedProductsCarousel from "@/components/FeaturedProductsCarousel";
+import UsecaseCarousel from "@/components/UsecaseCarousel";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -10,20 +11,40 @@ export default function Home() {
       name: "Vinyl Silk Emulsion",
       category: "Interior",
       description: "A premium quality, water-based paint with a smooth silky finish. Highly durable and easy to clean.",
-      image: "/images/products/vinyl silk emulsion interior finish.png"
+      image: "/images/products/usecase/interior-pr.png"
     },
     {
       name: "Exterio",
       category: "Exterior",
       description: "Silicon-based all-weather protection designed to withstand the harsh African climate while maintaining color brilliance.",
-      image: "/images/products/exterio exterior.png"
+      image: "/images/products/usecase/allweatherprotection-pr.png"
     },
     {
       name: "Tuff Tex",
       category: "Exterior",
       description: "High-performance rough textured coating that provides superior protection and a unique aesthetic appeal.",
-      image: "/images/products/tuff tex exterior.png"
+      image: "/images/products/usecase/exterior-pr.png"
+    },
+    {
+      name: "Skimfiller",
+      category: "Specialty",
+      description: "White cement-based putty for correcting unevenness on interior and exterior walls.",
+      image: "/images/products/usecase/skimfiller-pr.png"
+    },
+    {
+      name: "Water Repellent",
+      category: "Specialty",
+      description: "Invisible primer for mineral substrates that prevents water penetration.",
+      image: "/images/products/usecase/waterrepellent-pr.png"
     }
+  ];
+
+  const usecaseImages = [
+    "/images/products/usecase/interior-pr.png",
+    "/images/products/usecase/allweatherprotection-pr.png",
+    "/images/products/usecase/exterior-pr.png",
+    "/images/products/usecase/skimfiller-pr.png",
+    "/images/products/usecase/waterrepellent-pr.png"
   ];
 
   return (
@@ -80,31 +101,59 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="py-24 bg-gray-50">
+      {/* Featured Products / Premium Range */}
+      <section className="py-24 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div>
-              <h2 className="text-4xl font-bold text-brand-navy mb-4">Our Premium Range</h2>
-              <p className="text-gray-600 max-w-xl">
-                Discover our curated selection of high-performance paints designed for durability and aesthetic excellence.
-              </p>
+          <div className="flex flex-col lg:flex-row items-stretch gap-16">
+            <div className="flex-1 relative w-full">
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white w-full">
+                <UsecaseCarousel images={usecaseImages} />
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-10 -left-10 w-40 h-40 bg-brand-gold/20 rounded-full blur-3xl z-0"></div>
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-life-cyan/20 rounded-full blur-3xl z-0"></div>
             </div>
-            <Link 
-              href="/products" 
-              className="text-brand-navy font-bold flex items-center hover:text-life-cyan transition-colors"
-            >
-              View Full Catalog
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {featuredProducts.map((product, idx) => (
-              <ProductCard key={idx} {...product} />
-            ))}
+            
+            <div className="flex-1">
+              <div className="inline-block px-4 py-1 bg-brand-gold text-brand-navy text-xs font-bold rounded-full mb-6 tracking-wider">
+                PREMIUM COLLECTION
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-8 leading-tight">
+                Transform Your Space with <br /> <span className="text-[#f05c42]">Eisen Paints</span>
+              </h2>
+              <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+                <p>
+                  Discover our curated selection of high-performance paints designed for both durability and aesthetic excellence. Whether you are protecting an exterior facade against the harsh African climate or creating a silky, luxurious interior finish, Eisen Paints has the perfect coating for you.
+                </p>
+                <p>
+                  We blend advanced German engineering with Kenyan pride to create architectural paints that offer unmatched color retention, superior coverage, and lasting protection.
+                </p>
+              </div>
+              
+              <div className="mt-10 grid grid-cols-2 gap-6 mb-10">
+                {[
+                  { label: "Weather Resistant", icon: "🌦️" },
+                  { label: "Rich Pigments", icon: "🎨" },
+                  { label: "High Coverage", icon: "📏" },
+                  { label: "Eco-Friendly", icon: "🌱" }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center space-x-3 bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                    <span className="text-2xl">{item.icon}</span>
+                    <span className="font-bold text-brand-navy text-sm uppercase tracking-wide">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <Link 
+                href="/products" 
+                className="inline-flex items-center px-8 py-4 bg-brand-navy text-white font-bold rounded-full hover:bg-[#f05c42] transition-colors shadow-lg"
+              >
+                View Full Catalog
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
