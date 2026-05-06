@@ -1,6 +1,9 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import BrandBadge from './BrandBadge';
 
 const Hero = () => {
   return (
@@ -11,55 +14,63 @@ const Hero = () => {
           src="/images/carousel/hero-2.jpeg"
           alt="Modern Painted Interior"
           fill
-          className="object-cover"
+          className="object-cover scale-105 animate-slow-zoom"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/60 to-transparent"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="max-w-2xl text-white">
-          <div className="flex flex-col items-center w-fit mb-8">
-            <p className="text-white font-black text-xs uppercase tracking-[0.2em] text-center leading-snug mb-3">
-              German<br />Technology Paints<br />for Africa
-            </p>
-            <div className="flex items-center -space-x-2 mt-2">
-              <span className="w-12 h-12 bg-brand-black rounded-full relative z-10" />
-              <span className="w-12 h-12 bg-brand-red rounded-full relative z-20" />
-              <span className="w-12 h-12 bg-brand-gold rounded-full relative z-10" />
-            </div>
-          </div>
+        <div className="max-w-4xl text-white">
+          {/* Brand Badge from the provided design */}
+          <BrandBadge className="w-fit mb-12 animate-fade-in-up" />
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Bring <span className="text-life-cyan">life</span> to your space.
+          <h1 className="text-6xl md:text-8xl font-black mb-8 leading-[0.9] tracking-tighter animate-fade-in-up delay-100 font-display">
+            Bring <span className="text-transparent bg-clip-text bg-gradient-to-r from-life-cyan via-white to-life-lime">life</span> <br />
+            to your space.
           </h1>
 
-          <p className="text-xl text-gray-200 mb-10 leading-relaxed max-w-lg">
-            Experience premium quality and durability with Eisen Paints. Engineered with precision and crafted for the African environment.
+          <p className="text-xl text-gray-200 mb-12 leading-relaxed max-w-lg animate-fade-in-up delay-200 font-medium">
+            Experience the pinnacle of German engineering tailored for the African sun. Premium quality, extreme durability, and vibrant colors that last.
           </p>
 
-          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          <div className="flex flex-col sm:flex-row space-y-6 sm:space-y-0 sm:space-x-8 animate-fade-in-up delay-300">
+            {/* SVG Filter for Hero Buttons */}
+            <svg width="0" height="0" className="absolute">
+              <filter id="heroBrush">
+                <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G" />
+              </filter>
+            </svg>
+
             <Link
               href="/products"
-              className="bg-life-cyan text-brand-navy px-8 py-4 rounded-full font-bold text-lg text-center hover:bg-white transition-all duration-300 transform hover:scale-105"
+              className="group relative px-10 py-5 flex items-center justify-center transition-all duration-300 hover:scale-105"
             >
-              Explore Products
+              <div 
+                className="absolute inset-0 bg-life-cyan shadow-xl group-hover:bg-white transition-colors duration-500" 
+                style={{ filter: 'url(#heroBrush)' }}
+              ></div>
+              <span className="relative z-10 text-brand-navy font-black uppercase tracking-[0.2em] text-sm">Explore Products</span>
             </Link>
+            
             <Link
               href="/projects"
-              className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg text-center hover:bg-white/10 transition-all duration-300"
+              className="group relative px-10 py-5 flex items-center justify-center transition-all duration-300 hover:scale-105"
             >
-              View Our Projects
+              <div 
+                className="absolute inset-0 bg-white/10 border border-white/20 backdrop-blur-sm group-hover:bg-white/20 transition-all duration-500" 
+                style={{ filter: 'url(#heroBrush)' }}
+              ></div>
+              <span className="relative z-10 text-white font-black uppercase tracking-[0.2em] text-sm">View Our Projects</span>
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Paint Splash Decorative Element */}
-      <div className="absolute -bottom-20 -right-20 w-96 h-96 opacity-20 hidden lg:block">
-        <div className="absolute inset-0 bg-life-red rounded-full blur-[100px] animate-pulse"></div>
-        <div className="absolute top-20 left-20 w-64 h-64 bg-life-cyan rounded-full blur-[80px] animate-pulse delay-700"></div>
-      </div>
+      {/* Decorative paint splashes */}
+      <div className="absolute top-1/4 -right-20 w-[500px] h-[500px] bg-brand-navy/30 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
+      <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-life-cyan/20 rounded-full blur-[100px] pointer-events-none animate-pulse delay-1000"></div>
     </section>
   );
 };
