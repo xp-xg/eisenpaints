@@ -8,7 +8,7 @@ const Hero = () => {
       {/* Background with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/carousel/hero-1.png"
+          src="/images/carousel/hero-2.jpeg"
           alt="Modern Painted Interior"
           fill
           className="object-cover"
@@ -27,24 +27,24 @@ const Hero = () => {
             </div>
             <span className="text-xs font-bold uppercase tracking-widest">German Technology Paints for Africa</span>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Bring <span className="text-life-cyan">life</span> to your space.
           </h1>
-          
+
           <p className="text-xl text-gray-200 mb-10 leading-relaxed max-w-lg">
             Experience premium quality and durability with Eisen Paints. Engineered with precision and crafted for the African environment.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link 
-              href="/products" 
+            <Link
+              href="/products"
               className="bg-life-cyan text-brand-navy px-8 py-4 rounded-full font-bold text-lg text-center hover:bg-white transition-all duration-300 transform hover:scale-105"
             >
               Explore Products
             </Link>
-            <Link 
-              href="/projects" 
+            <Link
+              href="/projects"
               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg text-center hover:bg-white/10 transition-all duration-300"
             >
               View Our Projects
