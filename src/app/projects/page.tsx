@@ -176,14 +176,14 @@ const ProjectsPage = () => {
       </div>
 
       {/* Footer Motif from User Image */}
-      <div className="mt-32 flex flex-col items-center text-center">
-        <p className="text-sm font-bold text-brand-navy uppercase tracking-[0.3em] mb-6">
-          German<br />Technology Paints<br />For Africa
+      <div className="mt-32 flex flex-col items-center text-center pb-8">
+        <p className="text-brand-navy font-black text-sm uppercase tracking-[0.2em] text-center leading-snug mb-3">
+          German<br />Technology Paints<br />for Africa
         </p>
-        <div className="flex space-x-2">
-          <div className="w-12 h-12 rounded-full bg-[#333333] shadow-inner"></div>
-          <div className="w-12 h-12 rounded-full bg-[#E30613] shadow-inner"></div>
-          <div className="w-12 h-12 rounded-full bg-[#FFCC00] shadow-inner"></div>
+        <div className="flex items-center -space-x-2 mt-2">
+          <span className="w-12 h-12 bg-brand-black rounded-full relative z-10" />
+          <span className="w-12 h-12 bg-brand-red rounded-full relative z-20" />
+          <span className="w-12 h-12 bg-brand-gold rounded-full relative z-10" />
         </div>
       </div>
 

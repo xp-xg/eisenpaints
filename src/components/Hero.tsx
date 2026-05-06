@@ -19,13 +19,15 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-2xl text-white">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6 animate-fade-in">
-            <div className="flex space-x-1">
-              <div className="w-3 h-3 bg-brand-black rounded-full"></div>
-              <div className="w-3 h-3 bg-brand-red rounded-full"></div>
-              <div className="w-3 h-3 bg-brand-gold rounded-full"></div>
+          <div className="flex flex-col items-center w-fit mb-8">
+            <p className="text-white font-black text-xs uppercase tracking-[0.2em] text-center leading-snug mb-3">
+              German<br />Technology Paints<br />for Africa
+            </p>
+            <div className="flex items-center -space-x-2 mt-2">
+              <span className="w-12 h-12 bg-brand-black rounded-full relative z-10" />
+              <span className="w-12 h-12 bg-brand-red rounded-full relative z-20" />
+              <span className="w-12 h-12 bg-brand-gold rounded-full relative z-10" />
             </div>
-            <span className="text-xs font-bold uppercase tracking-widest">German Technology Paints for Africa</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
