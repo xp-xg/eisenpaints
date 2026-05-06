@@ -9,21 +9,7 @@ import PaintRollerButton from './PaintRollerButton';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isToolsOpen, setIsToolsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
-
-  // Handle scroll for transparent navbar
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Close menus on path change
   useEffect(() => {
@@ -44,41 +30,21 @@ const Navbar = () => {
     { name: 'Resources', href: '/resources', icon: '📚' },
   ];
 
-  // Determine if we should use light or dark text based on scroll and page
-  const isTransparentPage = ['/', '/about', '/products', '/contact'].includes(pathname);
-
-  const navbarClasses = `fixed w-full z-50 transition-all duration-500 ${isScrolled
-    ? 'bg-white shadow-xl py-2'
-    : isTransparentPage
-      ? 'bg-transparent py-4'
-      : 'bg-white shadow-sm py-2'
-    }`;
-
-  const logoTextClasses = isScrolled || !isTransparentPage ? 'text-brand-navy' : 'text-white';
-
-  // Brushstroke color based on scroll
-  const brushColor = isScrolled ? 'bg-brand-gold/10' : 'bg-white';
-  const textColor = isScrolled ? 'text-brand-navy' : isTransparentPage ? 'text-brand-navy' : 'text-brand-navy';
-  // Wait, in the image, even on white navbar, the links have a white brushstroke? 
-  // No, that wouldn't be visible. In Image 1, the brushstroke looks like it might be a light gray or gold.
-  // Actually, let's use White for transparent and Gold for scrolled.
+  // Navbar is absolute to float over the hero image, but it scrolls away with the page
+  const navbarClasses = "absolute top-0 left-0 w-full z-50 bg-transparent py-2 transition-all duration-300";
 
   return (
     <nav className={navbarClasses}>
       {/* SVG Filters for brushstroke effects */}
       <svg width="0" height="0" className="absolute">
-        <filter id="brush-fine">
-          <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4" result="noise" />
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G" />
-        </filter>
-        <filter id="brush-rough">
-          <feTurbulence type="fractalNoise" baseFrequency="0.1" numOctaves="3" result="noise" />
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="12" xChannelSelector="R" yChannelSelector="G" />
+        <filter id="brush-effect">
+          <feTurbulence type="fractalNoise" baseFrequency="0.15" numOctaves="4" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G" />
         </filter>
       </svg>
 
       {/* Top Banner */}
-      <div className="bg-brand-gold text-brand-navy text-[10px] md:text-xs py-1 md:py-2 font-black">
+      <div className="bg-brand-gold text-brand-navy text-[10px] md:text-xs py-2 font-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-1 md:gap-0">
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 items-center">
             <span className="flex items-center space-x-2">
@@ -122,40 +88,37 @@ const Navbar = () => {
                   className="h-12 w-auto transition-transform group-hover:scale-110"
                 />
               </div>
-              <span className={`font-black text-xl tracking-tighter hidden sm:block transition-colors duration-500 ${logoTextClasses} font-display`}>
+              <span className="font-black text-xl tracking-tighter hidden sm:block text-white font-display drop-shadow-md">
                 EISEN <span className="text-life-cyan">PAINTS</span>
               </span>
             </Link>
           </div>
 
-          {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center space-x-3 font-black text-[11px] uppercase tracking-[0.2em]">
+          {/* Desktop Nav - Brushstroke links floating on the image */}
+          <div className="hidden lg:flex items-center space-x-2 font-black text-[11px] uppercase tracking-[0.2em]">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="relative group px-6 py-3 flex items-center justify-center transition-all duration-300 hover:scale-105"
+                className="relative group px-10 py-5 flex items-center justify-center transition-all duration-300 hover:scale-110"
               >
-                {/* Brushstroke Background */}
                 <div 
-                  className={`absolute inset-0 transition-all duration-500 ${isScrolled ? 'bg-brand-gold/20' : 'bg-white shadow-sm'}`} 
-                  style={{ filter: isScrolled ? 'url(#brush-rough)' : 'url(#brush-fine)' }}
+                  className="absolute inset-0 bg-white shadow-xl transition-all duration-500 group-hover:bg-life-cyan" 
+                  style={{ filter: 'url(#brush-effect)' }}
                 ></div>
-                {/* Text */}
-                <span className="relative z-10 text-brand-navy group-hover:text-life-cyan transition-colors">
+                <span className="relative z-10 text-brand-navy group-hover:text-white transition-colors">
                   {link.name}
                 </span>
               </Link>
             ))}
 
-            {/* Tools Dropdown */}
             <div className="relative group/tools" onMouseEnter={() => setIsToolsOpen(true)} onMouseLeave={() => setIsToolsOpen(false)}>
-              <button className="relative px-6 py-3 flex items-center justify-center transition-all duration-300 hover:scale-105 group-hover/tools:scale-105">
+              <button className="relative px-10 py-5 flex items-center justify-center transition-all duration-300 hover:scale-110 group-hover/tools:scale-110">
                 <div 
-                  className={`absolute inset-0 transition-all duration-500 ${isScrolled ? 'bg-brand-gold/20' : 'bg-white shadow-sm'}`} 
-                  style={{ filter: isScrolled ? 'url(#brush-rough)' : 'url(#brush-fine)' }}
+                  className="absolute inset-0 bg-white shadow-xl transition-all duration-500 group-hover/tools:bg-life-cyan" 
+                  style={{ filter: 'url(#brush-effect)' }}
                 ></div>
-                <span className="relative z-10 text-brand-navy flex items-center space-x-2 group-hover/tools:text-life-cyan transition-colors">
+                <span className="relative z-10 text-brand-navy flex items-center space-x-2 group-hover/tools:text-white transition-colors">
                   <span>TOOLS</span>
                   <svg className={`w-3 h-3 transition-transform duration-300 ${isToolsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7" />
@@ -164,12 +127,12 @@ const Navbar = () => {
               </button>
 
               {isToolsOpen && (
-                <div className="absolute top-full left-0 w-64 bg-white/95 backdrop-blur-md shadow-2xl rounded-3xl border border-gray-100 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-300 mt-4 z-50 p-2">
+                <div className="absolute top-full left-0 w-64 bg-white shadow-2xl rounded-[2rem] border border-gray-100 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-300 mt-4 z-50 p-2">
                   {toolLinks.map((link) => (
                     <Link
                       key={link.name}
                       href={link.href}
-                      className="flex items-center space-x-4 p-4 hover:bg-gray-50 rounded-2xl transition-all duration-300 group/item"
+                      className="flex items-center space-x-4 p-4 hover:bg-life-cyan/10 rounded-2xl transition-all duration-300 group/item"
                     >
                       <span className="text-2xl group-hover/item:scale-125 transition-transform duration-300">{link.icon}</span>
                       <div className="text-brand-navy font-black text-[10px] uppercase tracking-widest">{link.name}</div>
@@ -181,24 +144,26 @@ const Navbar = () => {
 
             <Link
               href="/find-a-dealer"
-              className="relative group px-6 py-3 flex items-center justify-center transition-all duration-300 hover:scale-105"
+              className="relative group px-10 py-5 flex items-center justify-center transition-all duration-300 hover:scale-110"
             >
               <div 
-                className={`absolute inset-0 transition-all duration-500 ${isScrolled ? 'bg-brand-gold/20' : 'bg-white shadow-sm'}`} 
-                style={{ filter: isScrolled ? 'url(#brush-rough)' : 'url(#brush-fine)' }}
+                className="absolute inset-0 bg-white shadow-xl transition-all duration-500 group-hover:bg-life-cyan" 
+                style={{ filter: 'url(#brush-effect)' }}
               ></div>
-              <span className="relative z-10 text-brand-navy group-hover:text-life-cyan transition-colors">
+              <span className="relative z-10 text-brand-navy group-hover:text-white transition-colors">
                 DEALERS
               </span>
             </Link>
 
-            <PaintRollerButton isScrolled={isScrolled} className="ml-6" />
+            <div className="ml-4">
+               <PaintRollerButton isScrolled={false} />
+            </div>
           </div>
           
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`inline-flex items-center justify-center p-2 rounded-xl transition-all duration-500 ${isScrolled || !isTransparentPage ? 'text-brand-navy' : 'text-white'} hover:bg-white/10 focus:outline-none`}
+              className="inline-flex items-center justify-center p-2 rounded-xl text-white bg-brand-navy/30 backdrop-blur-md hover:bg-brand-navy focus:outline-none transition-colors"
             >
               <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                 {isOpen ? (
@@ -214,20 +179,17 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 h-screen overflow-y-auto animate-in slide-in-from-right duration-500">
+        <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 h-screen overflow-y-auto animate-in slide-in-from-right duration-500">
           <div className="px-6 pt-10 pb-32 space-y-4">
             {[...navLinks, ...toolLinks, { name: 'Find a Dealer', href: '/find-a-dealer' }].map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="block px-6 py-5 text-brand-navy font-black text-xl uppercase tracking-tighter hover:bg-gray-50 rounded-[2rem] transition-all duration-300 border border-transparent hover:border-gray-100"
+                className="block px-8 py-5 text-brand-navy font-black text-xl uppercase tracking-tighter hover:bg-gray-50 rounded-[2rem] transition-all duration-300"
               >
                 {link.name}
               </Link>
             ))}
-            <div className="pt-10">
-              <PaintRollerButton isScrolled={true} className="w-full" />
-            </div>
           </div>
         </div>
       )}

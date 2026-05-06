@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactFAB from "@/components/ContactFAB";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -16,40 +17,36 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Eisen Paints | Bring Life to Your Space | German Technology Paints",
-  description: "Official website for Eisen Paints, a proudly Kenyan brand utilizing German technology for the African market. High-performance paints and coatings.",
-  metadataBase: new URL("https://eisenpaints.com"), // Replace with actual domain if known
-  alternates: {
-    canonical: "/",
-  },
+  title: "Eisen Paints | German Technology Paints for Africa",
+  description: "Premium quality paints engineered with German precision for the African climate. Interior, exterior, and specialty coatings that bring life to your space.",
+  keywords: "paints, coatings, Kenyan paints, German technology, interior paints, exterior paints, Eisen Paints",
   openGraph: {
-    title: "Eisen Paints | Bring Life to Your Space",
-    description: "High-performance paints and coatings utilizing German technology for the African market.",
+    title: "Eisen Paints | German Technology Paints for Africa",
+    description: "Premium quality paints engineered with German precision for the African climate.",
     url: "https://eisenpaints.com",
     siteName: "Eisen Paints",
     images: [
       {
-        url: "/logos/logo.jpg",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Eisen Paints Logo",
       },
     ],
     locale: "en_KE",
     type: "website",
   },
-  icons: {
-    icon: [
-      { url: "/favicons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [
-      { url: "/favicons/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+  twitter: {
+    card: "summary_large_image",
+    title: "Eisen Paints | German Technology Paints for Africa",
+    description: "Premium quality paints engineered with German precision for the African climate.",
+    images: ["/images/og-image.png"],
   },
-  manifest: "/favicons/manifest.json",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
-
 
 export default function RootLayout({
   children,
@@ -63,8 +60,11 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans">
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow">
+          {children}
+        </main>
         <Footer />
+        <ScrollToTop />
         <ContactFAB />
       </body>
     </html>
