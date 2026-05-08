@@ -56,16 +56,38 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-stretch gap-16">
             {/* Image Side */}
-            <div className="flex-1 relative w-full">
+            <div className="flex-1 relative w-full group">
               <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white w-full">
                 <Image
                   src="/images/why-us/why-us-wu.png"
                   alt="Why Choose Eisen Paints"
                   width={800}
                   height={800}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
+              
+              {/* Award Badge - Floating */}
+              <div className="absolute -bottom-8 -right-8 z-20 w-32 h-32 md:w-40 md:h-40 group/award cursor-help">
+                <div className="relative w-full h-full transition-transform duration-500 group-hover/award:scale-110 animate-bounce-slow">
+                  <Image 
+                    src="/images/wim-excellence-award.png" 
+                    alt="WIM Excellence Award 2026" 
+                    fill
+                    className="object-contain drop-shadow-2xl"
+                  />
+                  {/* Glowing effect behind badge */}
+                  <div className="absolute inset-0 bg-brand-gold/20 rounded-full blur-2xl -z-10 animate-pulse"></div>
+                  
+                  {/* Premium Tooltip */}
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-56 bg-brand-navy border-2 border-brand-gold p-4 rounded-2xl shadow-2xl opacity-0 group-hover/award:opacity-100 transition-all duration-300 pointer-events-none z-[100] transform translate-y-2 group-hover/award:translate-y-0">
+                    <div className="text-white text-sm font-bold leading-tight">
+                      Eisen Paints: Proud Winner of WIM Excellence Awards 2026
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Decorative elements */}
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-life-cyan/20 rounded-full blur-3xl z-0"></div>
               <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-brand-gold/20 rounded-full blur-3xl z-0"></div>

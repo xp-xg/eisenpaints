@@ -9,7 +9,7 @@ const Hero = () => {
       {/* Background Image - Set back to object-cover to "fill the whole section" as requested */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/carousel/hero-2.jpeg" 
+          src="/images/carousel/Eisen_Home (2).jpeg" 
           alt="Eisen Paints Hero Showcase"
           fill
           className="object-cover transition-all duration-700"
