@@ -46,33 +46,17 @@ const Navbar = () => {
 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
+        <div className="flex justify-between items-start pt-4">
           {/* Logo & Award */}
-          <div className="flex-shrink-0 flex items-center space-x-4">
-            <div className="relative w-12 h-12 md:w-16 md:h-16 transform -rotate-12 block group/award cursor-help">
-              <Image 
-                src="/images/wim-excellence-award.png" 
-                alt="WIM Excellence Award" 
-                fill 
-                className="object-contain drop-shadow-lg transition-transform group-hover/award:scale-110 group-hover/award:rotate-0 duration-300"
-              />
-              {/* Premium Tooltip */}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-brand-navy border-2 border-brand-gold p-3 rounded-xl shadow-2xl opacity-0 group-hover/award:opacity-100 transition-all duration-300 pointer-events-none z-[100] transform translate-y-2 group-hover/award:translate-y-0">
-                <div className="text-white text-xs font-bold leading-tight">
-                  Proud Winner: WIM Excellence Awards 2026
-                </div>
-                {/* Arrow */}
-                <div className="absolute -top-2 left-1/2 -translate-x-1/2 border-l-8 border-l-transparent border-r-8 border-r-transparent border-bottom-8 border-b-brand-gold"></div>
-              </div>
-            </div>
+          <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center group">
               <div className="relative">
                 <Image
-                  src="/logos/android-chrome-512x512-removebg-preview.png"
+                  src="/logos/logo.png"
                   alt="Eisen Paints Logo"
-                  width={120}
-                  height={120}
-                  className="h-24 w-auto transition-transform group-hover:scale-110"
+                  width={400}
+                  height={400}
+                  className="h-48 md:h-72 w-auto transition-transform group-hover:scale-105"
                 />
               </div>
             </Link>

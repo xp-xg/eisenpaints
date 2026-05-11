@@ -27,7 +27,7 @@ const ClientCarousel = () => {
           {[...clients, ...clients, ...clients].map((client, index) => (
             <div 
               key={index} 
-              className="flex-shrink-0 flex items-center justify-center min-w-[200px] h-24 bg-white rounded-xl shadow-sm border border-gray-100 px-8 grayscale hover:grayscale-0 transition-all duration-300"
+              className="flex-shrink-0 flex items-center justify-center min-w-[200px] h-24 bg-white rounded-xl shadow-sm border border-gray-100 px-8 transition-all duration-300"
             >
               <div className="relative w-full h-12">
                 <Image

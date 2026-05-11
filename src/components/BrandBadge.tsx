@@ -15,7 +15,7 @@ const BrandBadge: React.FC<BrandBadgeProps> = ({
 }) => {
   const textStyles = light 
     ? 'text-white' 
-    : 'text-[#0D3182]'; // Brand Navy
+    : 'text-black'; // Absolute Black
 
   const alignStyles = {
     left: 'items-start text-left',

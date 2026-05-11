@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Brand Column - Centered as per "First Image" alignment */}
           <div className="col-span-1 md:col-span-1 flex flex-col items-center text-center md:items-start md:text-left">
             <div className="mb-10">
-               <BrandBadge light={true} align="center" className="scale-110 md:scale-100 md:-ml-4" />
+               <BrandBadge light={false} align="center" className="scale-110 md:scale-100 md:-ml-4" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-8 font-medium">
               Engineering the future of African architecture with precision German technology and vibrant, long-lasting color solutions.
@@ -35,7 +35,7 @@ const Footer = () => {
                 src="/images/wim-excellence-award.png" 
                 alt="WIM Excellence Award 2026" 
                 fill 
-                className="object-contain opacity-80 group-hover/award:opacity-100 transition-opacity grayscale hover:grayscale-0 duration-500"
+                className="object-contain transition-opacity duration-500"
               />
               {/* Tooltip */}
               <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-brand-navy border border-brand-gold p-3 rounded-lg shadow-2xl opacity-0 group-hover/award:opacity-100 transition-all duration-300 pointer-events-none z-[100] transform translate-y-2 group-hover/award:translate-y-0">
