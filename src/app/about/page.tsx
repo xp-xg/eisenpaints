@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import BrandBadge from '@/components/BrandBadge';
+import AchievementsSection from '@/components/AchievementsSection';
 
 export default function AboutPage() {
   return (
@@ -10,19 +11,19 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative h-[70vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         <Image 
-          src="/images/carousel/corousel-aboutus.png"
+          src="/images/eisen-splash.png"
           alt="About EiSEN Paints"
           fill
           className="object-cover scale-105 animate-slow-zoom"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/90 via-brand-navy/70 to-brand-navy/95"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <BrandBadge light={false} className="mx-auto mb-12 animate-fade-in-up" />
-          <h1 className="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter animate-fade-in-up delay-100 font-display uppercase">
+          <h1 className="text-5xl md:text-8xl font-black text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] mb-6 tracking-tighter animate-fade-in-up delay-100 font-display uppercase">
             Life is <span className="text-life-cyan italic">Colorful</span>.
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-medium animate-fade-in-up delay-200 leading-relaxed">
+          <p className="text-xl text-white drop-shadow-md max-w-3xl mx-auto font-medium animate-fade-in-up delay-200 leading-relaxed">
             EiSEN Paints — powered by trusted German technology and built with an obsession for quality.
           </p>
         </div>
@@ -314,51 +315,53 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Achievements Section */}
-      <section className="py-32 bg-brand-navy text-white overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-life-cyan via-brand-gold via-brand-red to-life-lime"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center gap-24">
-            <div className="flex-1">
-              <span className="text-brand-gold font-black uppercase tracking-[0.3em] text-xs">Milestones</span>
-              <h2 className="text-5xl md:text-8xl font-black font-display mt-6 mb-12 leading-[0.9] tracking-tighter uppercase">Our <br />Achievements</h2>
-              <div className="space-y-8 text-xl text-gray-300 font-medium leading-relaxed">
-                <p>
-                  At EiSEN Paints, every milestone is a reflection of hard work, faith, quality, and the people who believe in our brand.
-                </p>
-                <p>
-                  Today, EiSEN Paints is proud to be recognized as one of the leading paint manufacturers in the Rift Valley region — trusted by homeowners, painters, contractors, and developers for quality that speaks for itself.
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex-1 bg-white/5 backdrop-blur-3xl p-6 sm:p-12 md:p-16 rounded-[3rem] md:rounded-[4rem] border border-white/10 relative group shadow-[0_0_100px_rgba(0,174,239,0.1)]">
-               <div className="absolute -top-20 -right-20 w-64 h-64 bg-brand-gold/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000"></div>
-               <div className="relative z-10">
-                 <div className="text-8xl mb-12 drop-shadow-2xl">🏆</div>
-                 <p className="text-brand-gold font-black uppercase tracking-[0.4em] text-sm mb-6">National Recognition</p>
-                 <h3 className="text-lg sm:text-2xl md:text-5xl font-black font-display mb-10 leading-[1.1] tracking-tight">1st Runners Up <br /><span className="text-life-cyan uppercase block mt-2 break-words">Women in Manufacturing (WIM)</span></h3>
-                 <p className="text-gray-300 font-medium text-lg leading-relaxed mb-12 border-l-4 border-life-cyan pl-8">
-                   This recognition celebrates our commitment to manufacturing excellence, innovation, quality, and empowering communities through local industry.
-                 </p>
-                 <p className="text-gray-400 font-medium text-lg leading-relaxed mb-12">
-                   From humble beginnings to becoming a growing Kenyan brand powered by trusted German technology, we continue to build with purpose and passion.
-                 </p>
-                 <div className="h-px w-20 bg-brand-gold mb-10"></div>
-                 <p className="font-black text-2xl italic font-display tracking-tight text-white leading-tight">
-                   &quot;And this is only the beginning.&quot;
-                 </p>
-               </div>
-            </div>
+      {/* B.L.U.E Army Section */}
+      <section className="py-32 bg-brand-navy relative overflow-hidden">
+        {/* Abstract shapes */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-life-cyan/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-gold/5 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/4"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-24">
+            <span className="text-life-cyan font-black uppercase tracking-[0.3em] text-xs">Our Painters, Our Pride</span>
+            <h2 className="text-5xl md:text-8xl font-black text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] font-display mt-6 mb-6 uppercase tracking-tighter">
+              The <span className="text-life-cyan">B.L.U.E</span> Army
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-medium leading-relaxed">
+              At EiSEN Paints, we don&apos;t just work with painters; we build an army of excellence. We call our painters the <strong className="text-white">Blue Army</strong>.
+            </p>
           </div>
-          
-          <div className="mt-40 text-center">
-            <BrandBadge light={false} className="mx-auto mb-16 scale-[1.5] animate-pulse" />
-            <p className="text-5xl md:text-8xl font-black font-display uppercase tracking-tighter leading-none mb-4">EiSEN Paints</p>
-            <p className="text-3xl md:text-5xl font-black font-display text-life-cyan italic tracking-tight">Life is Colorful.</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+            {/* The B.L.U.E acronym cards */}
+            {[
+              { letter: 'B', word: 'Bold', text: 'in Vision', color: 'text-life-cyan', border: 'border-life-cyan/30' },
+              { letter: 'L', word: 'Loyal', text: 'to Quality', color: 'text-brand-gold', border: 'border-brand-gold/30' },
+              { letter: 'U', word: 'Unstoppable', text: 'in Purpose', color: 'text-brand-red', border: 'border-brand-red/30' },
+              { letter: 'E', word: 'Empowering', text: 'Excellence', color: 'text-life-lime', border: 'border-life-lime/30' },
+            ].map((item, idx) => (
+              <div key={idx} className={`bg-white/5 backdrop-blur-xl border ${item.border} p-10 rounded-[3rem] shadow-2xl hover:-translate-y-4 transition-all duration-500 group flex flex-col items-center text-center`}>
+                <div className={`text-7xl md:text-8xl font-black font-display mb-6 ${item.color} group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl`}>
+                  {item.letter}
+                </div>
+                <h3 className="text-2xl font-black text-white uppercase tracking-wider mb-2 font-display">{item.word}</h3>
+                <p className="text-gray-400 font-bold text-lg uppercase tracking-widest">{item.text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-24 text-center">
+             <div className="inline-flex items-center justify-center gap-4 bg-white/10 backdrop-blur-md px-10 py-6 rounded-full border border-white/20">
+               <span className="text-3xl">💙</span>
+               <p className="text-2xl font-black text-white font-display tracking-widest uppercase">#MunguMbele</p>
+               <span className="text-3xl">💙</span>
+             </div>
           </div>
         </div>
       </section>
+
+      {/* Achievements Section */}
+      <AchievementsSection />
     </div>
   );
 }

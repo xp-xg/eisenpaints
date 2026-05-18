@@ -9,13 +9,13 @@ const ContactPage = () => {
       {/* Hero Section */}
       <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image 
-          src="/images/carousel/corousel-contact.png"
+          src="/images/eisen-splash.png"
           alt="Eisen Paints Contact"
           fill
           className="object-cover scale-105 animate-slow-zoom"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/70 to-transparent"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-left">
           <div className="max-w-2xl">
             <span className="text-life-cyan font-bold tracking-[0.3em] uppercase text-sm mb-4 block animate-fade-in-up">Get a Professional Quote</span>
@@ -84,7 +84,7 @@ const ContactPage = () => {
               </div>
 
               <button className="w-full group relative overflow-hidden bg-brand-navy text-white font-black uppercase tracking-[0.2em] py-6 rounded-[2rem] transition-all duration-500 shadow-2xl hover:shadow-life-cyan/20">
-                <div className="absolute inset-0 bg-gradient-to-r from-life-cyan to-life-lime opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-black/10"></div>
                 <span className="relative z-10 flex items-center justify-center space-x-3">
                   <span>Submit Quote Request</span>
                   <svg className="w-5 h-5 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>

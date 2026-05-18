@@ -33,13 +33,13 @@ export default function VisualizerPage() {
       {/* Header with Carousel Image */}
       <section className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
         <Image 
-          src="/images/carousel/corousel-visualizer.png"
+          src="/images/eisen-splash.png"
           alt="Color Visualizer"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-brand-navy/60"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl font-black text-white mb-4">Color <span className="text-life-cyan">Visualizer</span></h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">

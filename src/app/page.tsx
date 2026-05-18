@@ -4,6 +4,7 @@ import FeaturedProductsCarousel from "@/components/FeaturedProductsCarousel";
 import UsecaseCarousel from "@/components/UsecaseCarousel";
 import Link from "next/link";
 import Image from "next/image";
+import AchievementsSection from "@/components/AchievementsSection";
 
 export default function Home() {
   const featuredProducts = [
@@ -137,6 +138,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Achievements / Awards Section */}
+      <AchievementsSection />
 
       {/* Featured Products / Premium Range */}
       <section className="py-24 bg-gray-50 overflow-hidden">

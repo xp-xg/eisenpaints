@@ -14,13 +14,13 @@ export default function CalculatorPage() {
       {/* Header with Carousel Image */}
       <section className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
         <Image 
-          src="/images/carousel/corousel-calculator.png"
+          src="/images/eisen-splash.png"
           alt="Paint Calculator"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-brand-navy/60"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl font-black text-white mb-6">
             Plan Your Project <span className="text-brand-gold">Precisely</span>

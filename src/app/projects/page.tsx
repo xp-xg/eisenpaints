@@ -116,16 +116,16 @@ const ProjectsPage = () => {
       {/* Header with Carousel Image */}
       <section className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden mb-16">
         <Image 
-          src="/images/carousel/corousel-projects.png"
+          src="/images/eisen-splash.png"
           alt="Our Projects"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-brand-navy/60"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <span className="text-2xl md:text-3xl font-medium text-brand-gold italic mb-2 block">Our Completed</span>
-          <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter">Projects</h1>
+          <h1 className="text-5xl md:text-8xl font-black text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] uppercase tracking-tighter">Projects</h1>
         </div>
       </section>
 

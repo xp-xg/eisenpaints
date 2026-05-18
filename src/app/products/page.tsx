@@ -97,16 +97,16 @@ export default function ProductsPage() {
       {/* Header with Carousel Image */}
       <section className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
         <Image 
-          src="/images/carousel/corousel- ourproducts.png"
+          src="/images/eisen-splash.png"
           alt="Our Products"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-brand-navy/60"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">Product Catalog</h1>
-          <p className="text-life-cyan text-xl font-medium tracking-widest uppercase">
+          <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] mb-6">Product Catalog</h1>
+          <p className="text-life-cyan text-xl font-bold tracking-widest uppercase drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
             Precision Engineering • Lasting Impressions
           </p>
         </div>
