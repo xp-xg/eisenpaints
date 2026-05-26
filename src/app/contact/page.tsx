@@ -2,35 +2,13 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Hero from '@/components/Hero';
 
 const ContactPage = () => {
   return (
-    <div className="pt-20 pb-24 bg-white selection:bg-life-cyan selection:text-white">
+    <div className="pb-24 bg-white selection:bg-life-cyan selection:text-white flex flex-col w-full">
       {/* Hero Section */}
-      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <Image 
-          src="/images/eisen-splash.png"
-          alt="Eisen Paints Contact"
-          fill
-          className="object-cover scale-105 animate-slow-zoom"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-left">
-          <div className="max-w-2xl">
-            <span className="text-life-cyan font-bold tracking-[0.3em] uppercase text-sm mb-4 block animate-fade-in-up">Get a Professional Quote</span>
-            <h1 className="text-6xl md:text-8xl font-black text-white mb-6 leading-none tracking-tighter animate-fade-in-up delay-100">
-              Bring <span className="text-transparent bg-clip-text bg-gradient-to-r from-life-cyan to-life-lime">Life</span> to Your Space.
-            </h1>
-            <p className="text-gray-200 text-xl font-medium max-w-lg animate-fade-in-up delay-200">
-              Whether it's a residential project or a large-scale industrial coating, our German technology ensures perfection.
-            </p>
-          </div>
-        </div>
-        
-        {/* Abstract shapes for premium feel */}
-        <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-gradient-to-tl from-life-cyan/20 to-transparent blur-3xl rounded-full translate-x-1/2 translate-y-1/2"></div>
-      </div>
+      <Hero imageSrc="/images/eisen-splash.png" altText="Eisen Paints Contact" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-24 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">

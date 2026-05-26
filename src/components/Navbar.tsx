@@ -10,6 +10,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isToolsOpen, setIsToolsOpen] = useState(false);
   const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   // Close menus on path change
   useEffect(() => {
@@ -49,20 +50,7 @@ const Navbar = () => {
         <div className="flex justify-between items-start pt-4">
           {/* Logo & Award */}
 
-          {/* Logo positioned in top left corner */}
-          <div className="absolute top-4 left-4 z-[60]">
-            <Link href="/" className="flex items-center group">
-              <div className="relative">
-                <Image
-                  src="/logos/logo.png"
-                  alt="Eisen Paints Logo"
-                  width={400}
-                  height={400}
-                  className="h-48 md:h-72 w-auto transition-transform group-hover:scale-105"
-                />
-              </div>
-            </Link>
-          </div>
+          {/* Logo is now baked into the page hero images */}
 
           {/* Desktop Nav - Brushstroke links floating on the image */}
           <div className="hidden lg:flex items-center space-x-2 font-black text-[11px] uppercase tracking-[0.2em]">

@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import ProductCard from '@/components/ProductCard';
+import Hero from '@/components/Hero';
 
 const allProducts = [
   {
@@ -95,22 +96,7 @@ export default function ProductsPage() {
     <main className="min-h-screen bg-gray-50">
       
       {/* Header with Carousel Image */}
-      <section className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
-        <Image 
-          src="/images/eisen-splash.png"
-          alt="Our Products"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] mb-6">Product Catalog</h1>
-          <p className="text-life-cyan text-xl font-bold tracking-widest uppercase drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
-            Precision Engineering • Lasting Impressions
-          </p>
-        </div>
-      </section>
+      <Hero imageSrc="/images/hero/Eisen-products-1920w .webp" altText="Our Products" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex flex-col lg:flex-row gap-12">

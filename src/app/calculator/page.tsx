@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import PaintCalculator from '@/components/PaintCalculator';
+import Hero from '@/components/Hero';
 
 export const metadata = {
   title: 'Paint Calculator | Eisen Paints',
@@ -12,27 +13,10 @@ export default function CalculatorPage() {
     <main className="min-h-screen bg-gray-50">
       
       {/* Header with Carousel Image */}
-      <section className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
-        <Image 
-          src="/images/eisen-splash.png"
-          alt="Paint Calculator"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Plan Your Project <span className="text-brand-gold">Precisely</span>
-          </h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Avoid over-ordering or running out mid-project. Our calculator provides a reliable estimate based on your room dimensions.
-          </p>
-        </div>
-      </section>
+      <Hero imageSrc="/images/hero/Eisen-tools-1920w.webp" altText="Paint Calculator" />
 
       {/* Calculator Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative z-20">
         <PaintCalculator />
       </section>
 

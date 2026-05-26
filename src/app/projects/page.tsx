@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Hero from '@/components/Hero';
 
 const projects = [
   {
@@ -112,24 +113,12 @@ const projects = [
 
 const ProjectsPage = () => {
   return (
-    <div className="pt-20 bg-white">
+    <div className="bg-white flex flex-col w-full">
       {/* Header with Carousel Image */}
-      <section className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden mb-16">
-        <Image 
-          src="/images/eisen-splash.png"
-          alt="Our Projects"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <span className="text-2xl md:text-3xl font-medium text-brand-gold italic mb-2 block">Our Completed</span>
-          <h1 className="text-5xl md:text-8xl font-black text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] uppercase tracking-tighter">Projects</h1>
-        </div>
-      </section>
+      <Hero imageSrc="/images/hero/Eisen-projects-1920w.webp" altText="Our Completed Projects" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {projects.map((project, index) => (
             <div key={index} className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100">
@@ -174,6 +163,7 @@ const ProjectsPage = () => {
           ))}
         </div>
       </div>
+      </section>
 
       {/* Footer Motif from User Image */}
       <div className="mt-32 flex flex-col items-center text-center pb-8">

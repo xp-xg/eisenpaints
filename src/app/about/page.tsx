@@ -1,33 +1,14 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
-import BrandBadge from '@/components/BrandBadge';
+import Hero from '@/components/Hero';
 import AchievementsSection from '@/components/AchievementsSection';
 
 export default function AboutPage() {
   return (
-    <div className="pt-20 selection:bg-life-cyan selection:text-white bg-white">
+    <div className="selection:bg-life-cyan selection:text-white bg-white flex flex-col w-full">
       {/* Hero Section */}
-      <section className="relative h-[70vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-        <Image 
-          src="/images/eisen-splash.png"
-          alt="About EiSEN Paints"
-          fill
-          className="object-cover scale-105 animate-slow-zoom"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <BrandBadge light={false} className="mx-auto mb-12 animate-fade-in-up" />
-          <h1 className="text-5xl md:text-8xl font-black text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] mb-6 tracking-tighter animate-fade-in-up delay-100 font-display uppercase">
-            Life is <span className="text-life-cyan italic">Colorful</span>.
-          </h1>
-          <p className="text-xl text-white drop-shadow-md max-w-3xl mx-auto font-medium animate-fade-in-up delay-200 leading-relaxed">
-            EiSEN Paints — powered by trusted German technology and built with an obsession for quality.
-          </p>
-        </div>
-      </section>
+      <Hero imageSrc="/images/hero/Eisen-about-1920w.webp" altText="About EiSEN Paints" />
 
       {/* Leadership Message Section */}
       <section className="py-32 relative overflow-hidden bg-white">
