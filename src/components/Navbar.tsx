@@ -48,7 +48,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-start pt-4">
           {/* Logo & Award */}
-          <div className="flex-shrink-0 flex items-center">
+
+          {/* Logo positioned in top left corner */}
+          <div className="absolute top-4 left-4 z-[60]">
             <Link href="/" className="flex items-center group">
               <div className="relative">
                 <Image
@@ -70,8 +72,8 @@ const Navbar = () => {
                 href={link.href}
                 className="relative group px-10 py-5 flex items-center justify-center transition-all duration-300 hover:scale-110"
               >
-                <div 
-                  className="absolute inset-0 bg-white shadow-xl transition-all duration-500 group-hover:bg-life-cyan" 
+                <div
+                  className="absolute inset-0 bg-white shadow-xl transition-all duration-500 group-hover:bg-life-cyan"
                   style={{ filter: 'url(#brush-effect)' }}
                 ></div>
                 <span className="relative z-10 text-brand-navy group-hover:text-white transition-colors">
@@ -82,8 +84,8 @@ const Navbar = () => {
 
             <div className="relative group/tools" onMouseEnter={() => setIsToolsOpen(true)} onMouseLeave={() => setIsToolsOpen(false)}>
               <button className="relative px-10 py-5 flex items-center justify-center transition-all duration-300 hover:scale-110 group-hover/tools:scale-110">
-                <div 
-                  className="absolute inset-0 bg-white shadow-xl transition-all duration-500 group-hover/tools:bg-life-cyan" 
+                <div
+                  className="absolute inset-0 bg-white shadow-xl transition-all duration-500 group-hover/tools:bg-life-cyan"
                   style={{ filter: 'url(#brush-effect)' }}
                 ></div>
                 <span className="relative z-10 text-brand-navy flex items-center space-x-2 group-hover/tools:text-white transition-colors">
@@ -102,8 +104,8 @@ const Navbar = () => {
                       href={link.href}
                       className="relative group/item px-8 py-4 flex items-center space-x-4 transition-all duration-300 hover:scale-105"
                     >
-                      <div 
-                        className="absolute inset-0 bg-white shadow-md transition-all duration-500 group-hover/item:bg-life-cyan" 
+                      <div
+                        className="absolute inset-0 bg-white shadow-md transition-all duration-500 group-hover/item:bg-life-cyan"
                         style={{ filter: 'url(#brush-effect)' }}
                       ></div>
                       <span className="relative z-10 text-2xl group-hover/item:scale-110 transition-transform duration-300">
@@ -122,8 +124,8 @@ const Navbar = () => {
               href="/find-a-dealer"
               className="relative group px-10 py-5 flex items-center justify-center transition-all duration-300 hover:scale-110"
             >
-              <div 
-                className="absolute inset-0 bg-white shadow-xl transition-all duration-500 group-hover:bg-life-cyan" 
+              <div
+                className="absolute inset-0 bg-white shadow-xl transition-all duration-500 group-hover:bg-life-cyan"
                 style={{ filter: 'url(#brush-effect)' }}
               ></div>
               <span className="relative z-10 text-brand-navy group-hover:text-white transition-colors">
@@ -132,10 +134,10 @@ const Navbar = () => {
             </Link>
 
             <div className="ml-4">
-               <PaintRollerButton isScrolled={false} />
+              <PaintRollerButton isScrolled={false} />
             </div>
           </div>
-          
+
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
