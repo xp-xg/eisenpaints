@@ -124,6 +124,19 @@ const Navbar = () => {
             <div className="ml-4">
               <PaintRollerButton isScrolled={false} />
             </div>
+
+            {/* "Life is colourful" brand tagline — decorative only */}
+            <div className="relative flex items-center ml-2 pointer-events-none select-none">
+              <div className="relative w-[200px] h-[55px] overflow-visible">
+                <Image
+                  src="/images/life-is-colourful.png"
+                  alt="Life is colourful"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </div>
           </div>
 
           <div className="lg:hidden flex items-center">

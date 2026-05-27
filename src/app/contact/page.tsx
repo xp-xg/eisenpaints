@@ -8,7 +8,7 @@ const ContactPage = () => {
   return (
     <div className="pb-24 bg-white selection:bg-life-cyan selection:text-white flex flex-col w-full">
       {/* Hero Section */}
-      <Hero imageSrc="/images/eisen-splash.png" altText="Eisen Paints Contact" />
+      <Hero imageSrc="/images/hero/Eisen-contact-1920w.webp" altText="Eisen Paints Contact" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-24 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
