@@ -31,9 +31,9 @@ export const metadata = {
 export default function ResourcesPage() {
   return (
     <main className="min-h-screen bg-gray-50">
-      
+
       {/* Header with Carousel Image */}
-      <Hero imageSrc="/images/hero/Eisen-tools-1920w.webp" altText="Resources and Support" />
+      <Hero imageSrc="/images/hero/Eisen-calculator--nav-1920w.webp" altText="Resources and Support" />
 
       {/* Resources Grid */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,7 +45,7 @@ export default function ResourcesPage() {
               <p className="text-gray-600 mb-8 leading-relaxed">
                 {resource.description}
               </p>
-              
+
               <div className="mt-auto">
                 <div className="p-4 bg-gray-50 rounded-xl border border-dashed border-gray-300 text-center text-sm text-gray-500 mb-6">
                   Placeholder for PDF files
@@ -69,8 +69,8 @@ export default function ResourcesPage() {
           <p className="text-lg text-gray-600 mb-10">
             Our team of coating experts is available to help you with specific product recommendations or technical queries.
           </p>
-          <a 
-            href="/contact" 
+          <a
+            href="/contact"
             className="inline-flex items-center justify-center px-10 py-4 bg-life-cyan text-brand-navy font-bold rounded-full hover:bg-brand-navy hover:text-white transition-all duration-300 shadow-lg"
           >
             Contact Technical Support

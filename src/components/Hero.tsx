@@ -9,7 +9,7 @@ interface HeroProps {
 }
 
 const Hero = ({
-  imageSrc = "/images/carousel/Eisen-hero-1920w (3).webp",
+  imageSrc = "/images/carousel/Eisen-hero--nav-1920w.webp",
   altText = "Eisen Paints Hero Showcase"
 }: HeroProps) => {
   return (

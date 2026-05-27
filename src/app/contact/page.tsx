@@ -16,7 +16,7 @@ const ContactPage = () => {
           <div className="lg:col-span-8 bg-white/80 backdrop-blur-xl p-8 md:p-12 rounded-[3rem] shadow-2xl border border-white/20">
             <h2 className="text-4xl font-black text-brand-navy mb-2">Request a Quote</h2>
             <p className="text-gray-500 mb-10 font-medium">Fill out the form below and our technical team will contact you within 24 hours.</p>
-            
+
             <form className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
@@ -112,26 +112,26 @@ const ContactPage = () => {
             </div>
 
             <div className="bg-brand-gold p-10 rounded-[3rem] text-brand-navy shadow-2xl relative overflow-hidden group">
-               <div className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"></div>
-               <h3 className="text-2xl font-black mb-4">Why Eisen?</h3>
-               <ul className="space-y-4 font-bold text-sm">
-                 <li className="flex items-center space-x-3">
-                   <span className="text-brand-navy">✓</span>
-                   <span>German Polymer Technology</span>
-                 </li>
-                 <li className="flex items-center space-x-3">
-                   <span className="text-brand-navy">✓</span>
-                   <span>10+ Years Durability</span>
-                 </li>
-                 <li className="flex items-center space-x-3">
-                   <span className="text-brand-navy">✓</span>
-                   <span>Eco-Friendly Formulations</span>
-                 </li>
-                 <li className="flex items-center space-x-3">
-                   <span className="text-brand-navy">✓</span>
-                   <span>Extreme Weather Resistance</span>
-                 </li>
-               </ul>
+              <div className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"></div>
+              <h3 className="text-2xl font-black mb-4">Why Eisen?</h3>
+              <ul className="space-y-4 font-bold text-sm">
+                <li className="flex items-center space-x-3">
+                  <span className="text-brand-navy">✓</span>
+                  <span>German Polymer Technology</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <span className="text-brand-navy">✓</span>
+                  <span>10+ Years Durability</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <span className="text-brand-navy">✓</span>
+                  <span>Eco-Friendly Formulations</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <span className="text-brand-navy">✓</span>
+                  <span>Extreme Weather Resistance</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -140,13 +140,13 @@ const ContactPage = () => {
       {/* Map Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 mb-12">
         <div className="h-[500px] w-full rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white group relative">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3989.771452636718!2d36.0544243!3d-0.2854342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMTcnMDcuNiJTIDM2wrAwMycyNS4yIkU!5e0!3m2!1sen!2ske!4v1714896123456!5m2!1sen!2ske" 
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen 
-            loading="lazy" 
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3989.771452636718!2d36.0544243!3d-0.2854342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMTcnMDcuNiJTIDM2wrAwMycyNS4yIkU!5e0!3m2!1sen!2ske!4v1714896123456!5m2!1sen!2ske"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             className="grayscale group-hover:grayscale-0 transition-all duration-1000 transform group-hover:scale-105"
           ></iframe>

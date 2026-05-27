@@ -52,14 +52,14 @@ export const metadata = {
 export default function DealerLocatorPage() {
   return (
     <main className="min-h-screen bg-gray-50">
-      
+
       {/* Header with Carousel Image */}
-      <Hero imageSrc="/images/hero/Eisen-dealer-1920w.webp" altText="Find a Dealer" />
+      <Hero imageSrc="/images/hero/Eisen-dealer--nav-1920w.webp" altText="Find a Dealer" />
 
       {/* Main Content */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
-          
+
           {/* Quick Stats/Info */}
           <div className="lg:col-span-1 space-y-6">
             <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
@@ -70,7 +70,7 @@ export default function DealerLocatorPage() {
                 <li className="flex justify-between"><span>Sunday:</span> <span className="font-gray-400">Closed</span></li>
               </ul>
             </div>
-            
+
             <div className="bg-brand-gold p-6 rounded-3xl shadow-lg text-brand-navy">
               <h3 className="text-lg font-bold mb-2">Bulk Orders?</h3>
               <p className="text-sm opacity-80 mb-4 font-medium">Contact our corporate sales department for large-scale projects and contractor pricing.</p>
@@ -97,7 +97,7 @@ export default function DealerLocatorPage() {
                         </span>
                       </div>
                       <h3 className="text-xl font-bold text-brand-navy mb-4 group-hover:text-life-cyan transition-colors">{dealer.name}</h3>
-                      
+
                       <div className="space-y-3 mb-8 text-sm text-gray-600">
                         <div className="flex items-start space-x-3">
                           <span className="text-life-cyan">📍</span>
@@ -110,15 +110,15 @@ export default function DealerLocatorPage() {
                       </div>
 
                       <div className="flex space-x-3">
-                        <a 
-                          href={dealer.mapUrl} 
-                          target="_blank" 
+                        <a
+                          href={dealer.mapUrl}
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="flex-1 py-3 px-4 bg-gray-50 text-brand-navy text-xs font-bold rounded-xl text-center hover:bg-brand-navy hover:text-white transition-all"
                         >
                           View Map
                         </a>
-                        <a 
+                        <a
                           href={`tel:${dealer.contact.replace(/\s/g, '')}`}
                           className="py-3 px-4 bg-life-cyan text-brand-navy text-xs font-bold rounded-xl hover:bg-brand-navy hover:text-white transition-all"
                         >
@@ -142,8 +142,8 @@ export default function DealerLocatorPage() {
           <p className="text-xl text-white/70 mb-10 leading-relaxed">
             Join the Eisen Paints family and bring premium coating solutions to your region. We offer competitive margins, technical training, and marketing support.
           </p>
-          <a 
-            href="/contact" 
+          <a
+            href="/contact"
             className="inline-flex items-center justify-center px-10 py-4 bg-brand-gold text-brand-navy font-bold rounded-full hover:bg-white hover:scale-105 transition-all duration-300 shadow-2xl"
           >
             Apply for Dealership

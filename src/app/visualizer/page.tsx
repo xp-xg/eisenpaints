@@ -5,9 +5,9 @@ import Image from 'next/image';
 import Hero from '@/components/Hero';
 
 const rooms = [
-  { 
-    id: 'living', 
-    name: 'Living Room', 
+  {
+    id: 'living',
+    name: 'Living Room',
     image: '/images/interior-showcase.png' // Using existing image
   }
 ];
@@ -30,34 +30,34 @@ export default function VisualizerPage() {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      
+
       {/* Header with Carousel Image */}
-      <Hero imageSrc="/images/hero/Eisen-tools-1920w.webp" altText="Color Visualizer" />
+      <Hero imageSrc="/images/hero/Eisen-calculator--nav-1920w.webp" altText="Color Visualizer" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col lg:flex-row gap-12">
-          
+
           {/* Visualizer Area */}
           <div className="flex-1 space-y-6">
             <div className="relative aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-2xl bg-black group">
               {/* The Room Image */}
-              <Image 
-                src={selectedRoom.image} 
+              <Image
+                src={selectedRoom.image}
                 alt={selectedRoom.name}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              
+
               {/* The Color Overlay */}
-              <div 
+              <div
                 className="absolute inset-0 transition-colors duration-500 pointer-events-none"
-                style={{ 
+                style={{
                   backgroundColor: selectedColor.hex,
                   mixBlendMode: 'multiply',
-                  opacity: intensity 
+                  opacity: intensity
                 }}
               />
-              
+
               <div className="absolute bottom-8 left-8 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 text-white font-bold text-sm">
                 Viewing: {selectedRoom.name}
               </div>
@@ -68,11 +68,11 @@ export default function VisualizerPage() {
                 <h3 className="text-lg font-bold text-brand-navy mb-1">Color Intensity</h3>
                 <p className="text-sm text-gray-400">Adjust the saturation of the preview</p>
               </div>
-              <input 
-                type="range" 
-                min="0.1" 
-                max="0.8" 
-                step="0.05" 
+              <input
+                type="range"
+                min="0.1"
+                max="0.8"
+                step="0.05"
                 value={intensity}
                 onChange={(e) => setIntensity(parseFloat(e.target.value))}
                 className="w-full md:w-64 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-life-cyan"
@@ -87,17 +87,16 @@ export default function VisualizerPage() {
                 <span className="w-8 h-8 rounded-full bg-brand-gold flex items-center justify-center text-sm mr-3">1</span>
                 Select Color
               </h2>
-              
+
               <div className="grid grid-cols-4 gap-4 mb-8">
                 {colors.map((color) => (
                   <button
                     key={color.name}
                     onClick={() => setSelectedColor(color)}
-                    className={`aspect-square rounded-2xl transition-all border-4 ${
-                      selectedColor.hex === color.hex 
-                      ? 'border-brand-navy scale-110 shadow-lg' 
-                      : 'border-transparent hover:scale-105'
-                    }`}
+                    className={`aspect-square rounded-2xl transition-all border-4 ${selectedColor.hex === color.hex
+                        ? 'border-brand-navy scale-110 shadow-lg'
+                        : 'border-transparent hover:scale-105'
+                      }`}
                     style={{ backgroundColor: color.hex }}
                     title={color.name}
                   />
@@ -114,15 +113,15 @@ export default function VisualizerPage() {
                 <span className="w-8 h-8 rounded-full bg-life-cyan flex items-center justify-center text-sm mr-3 text-white">2</span>
                 Get This Color
               </h2>
-              
+
               <div className="space-y-3">
-                <button 
+                <button
                   className="w-full py-4 bg-brand-navy text-white font-bold rounded-2xl hover:bg-life-cyan transition-all duration-300 shadow-xl shadow-brand-navy/10"
                   onClick={() => window.location.href = '/contact'}
                 >
                   Request a Quote
                 </button>
-                <button 
+                <button
                   className="w-full py-4 border-2 border-gray-100 text-brand-navy font-bold rounded-2xl hover:bg-gray-50 transition-all"
                   onClick={() => window.location.href = '/products'}
                 >

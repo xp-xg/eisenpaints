@@ -11,9 +11,9 @@ export const metadata = {
 export default function CalculatorPage() {
   return (
     <main className="min-h-screen bg-gray-50">
-      
+
       {/* Header with Carousel Image */}
-      <Hero imageSrc="/images/hero/Eisen-tools-1920w.webp" altText="Paint Calculator" />
+      <Hero imageSrc="/images/hero/Eisen-calculator--nav-1920w.webp" altText="Paint Calculator" />
 
       {/* Calculator Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 relative z-20">

@@ -8,7 +8,7 @@ export default function AboutPage() {
   return (
     <div className="selection:bg-life-cyan selection:text-white bg-white flex flex-col w-full">
       {/* Hero Section */}
-      <Hero imageSrc="/images/hero/Eisen-about-1920w.webp" altText="About EiSEN Paints" />
+      <Hero imageSrc="/images/hero/Eisen-about--nav-1920w.webp" altText="About EiSEN Paints" />
 
       {/* Leadership Message Section */}
       <section className="py-32 relative overflow-hidden bg-white">
@@ -18,7 +18,7 @@ export default function AboutPage() {
             <span className="text-brand-gold font-black uppercase tracking-[0.3em] text-[10px]">The Heart of EiSEN</span>
             <h2 className="text-4xl md:text-5xl font-black text-brand-navy mt-4 font-display uppercase tracking-tight">A Message From Our Leadership</h2>
           </div>
-          
+
           <div className="bg-white p-10 md:p-20 rounded-[4rem] shadow-2xl shadow-brand-navy/10 border border-gray-100 relative">
             <div className="absolute -top-10 -left-10 w-24 h-24 bg-life-cyan rounded-3xl flex items-center justify-center text-white text-6xl font-black shadow-2xl transform -rotate-6">
               &quot;
@@ -44,9 +44,9 @@ export default function AboutPage() {
                 At EiSEN, we do not just manufacture paint — we build trust, transform spaces, and color the future with purpose.
               </p>
               <div className="pt-10 mt-10 border-t border-gray-100">
-                 <p className="font-black text-brand-navy text-2xl font-display">
-                    EiSEN Paints — Life is Colorful.
-                 </p>
+                <p className="font-black text-brand-navy text-2xl font-display">
+                  EiSEN Paints — Life is Colorful.
+                </p>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@ export default function AboutPage() {
         {/* Abstract Paint Splashes */}
         <div className="absolute -top-20 -left-20 w-[600px] h-[600px] bg-life-cyan/10 rounded-full blur-[150px]"></div>
         <div className="absolute -bottom-20 -right-20 w-[600px] h-[600px] bg-brand-gold/10 rounded-full blur-[150px]"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             <div className="space-y-16">
@@ -69,9 +69,9 @@ export default function AboutPage() {
                   To be Africa’s most trusted and innovative paint brand — empowering painters, transforming spaces, and delivering beauty, protection, and purpose in every coat.
                 </p>
               </div>
-              
+
               <div className="h-px w-full bg-white/10"></div>
-              
+
               <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-12 rounded-[3rem] shadow-inner">
                 <h3 className="text-brand-gold font-black uppercase tracking-[0.3em] text-xs mb-10">EiSEN Paints Strategy</h3>
                 <p className="text-xl text-white mb-10 font-bold">Our strategy is built on quality, people, innovation, and purposeful growth.</p>
@@ -90,9 +90,9 @@ export default function AboutPage() {
                   ))}
                 </div>
                 <div className="mt-16 pt-8 border-t border-white/10">
-                    <p className="text-lg font-black text-life-cyan uppercase tracking-wider">
-                        At EiSEN Paints, we are not just building a paint company — we are building a trusted African brand that colors the future with excellence and purpose.
-                    </p>
+                  <p className="text-lg font-black text-life-cyan uppercase tracking-wider">
+                    At EiSEN Paints, we are not just building a paint company — we are building a trusted African brand that colors the future with excellence and purpose.
+                  </p>
                 </div>
               </div>
             </div>
@@ -115,9 +115,9 @@ export default function AboutPage() {
                   With every project, we aim to create beautiful spaces, empower communities, and contribute to a more vibrant and sustainable future.
                 </p>
                 <div className="pt-10">
-                    <p className="text-3xl font-black text-brand-navy font-display">
-                        Because at EiSEN, <span className="text-life-cyan italic underline decoration-brand-gold decoration-4 underline-offset-8">Life is Colorful.</span>
-                    </p>
+                  <p className="text-3xl font-black text-brand-navy font-display">
+                    Because at EiSEN, <span className="text-life-cyan italic underline decoration-brand-gold decoration-4 underline-offset-8">Life is Colorful.</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -128,11 +128,11 @@ export default function AboutPage() {
       {/* Core Values Section */}
       <section className="py-32 bg-gray-50 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-24">
-            <span className="text-life-cyan font-black uppercase tracking-[0.3em] text-xs">What We Stand For</span>
-            <h2 className="text-5xl md:text-8xl font-black text-brand-navy font-display mt-6 mb-6 uppercase tracking-tighter">Core Values</h2>
-            <div className="w-32 h-2 bg-brand-gold mx-auto rounded-full"></div>
+          <span className="text-life-cyan font-black uppercase tracking-[0.3em] text-xs">What We Stand For</span>
+          <h2 className="text-5xl md:text-8xl font-black text-brand-navy font-display mt-6 mb-6 uppercase tracking-tighter">Core Values</h2>
+          <div className="w-32 h-2 bg-brand-gold mx-auto rounded-full"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {[
@@ -151,13 +151,13 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-          
+
           <div className="mt-32 text-center bg-brand-navy p-16 rounded-[4rem] shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-life-cyan/10 rounded-full blur-3xl"></div>
             <p className="text-4xl md:text-5xl font-black text-white font-display tracking-[0.2em] mb-6 uppercase">Faith. Quality. Purpose.</p>
             <p className="text-life-cyan font-black text-5xl font-display tracking-tight">#MunguMbele</p>
             <div className="mt-12">
-               <p className="text-brand-gold font-black text-xl italic uppercase tracking-widest">EiSEN Paints — Life is Colorful.</p>
+              <p className="text-brand-gold font-black text-xl italic uppercase tracking-widest">EiSEN Paints — Life is Colorful.</p>
             </div>
           </div>
         </div>
@@ -180,16 +180,16 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="flex-1 w-full relative">
-               <div className="grid grid-cols-2 gap-8">
-                  <div className="bg-life-cyan aspect-square rounded-[4rem] p-12 flex flex-col justify-end shadow-2xl transform -rotate-3 group hover:rotate-0 transition-transform duration-500">
-                    <span className="text-white text-5xl mb-6">🚀</span>
-                    <p className="text-white font-black text-3xl uppercase font-display leading-none tracking-tighter">Expanding <br />Capacity</p>
-                  </div>
-                  <div className="bg-brand-navy aspect-square rounded-[4rem] p-12 flex flex-col justify-end shadow-2xl transform rotate-6 group hover:rotate-0 transition-transform duration-500 translate-y-16">
-                    <span className="text-white text-5xl mb-6">🌍</span>
-                    <p className="text-white font-black text-3xl uppercase font-display leading-none tracking-tighter">Regional <br />Growth</p>
-                  </div>
-               </div>
+              <div className="grid grid-cols-2 gap-8">
+                <div className="bg-life-cyan aspect-square rounded-[4rem] p-12 flex flex-col justify-end shadow-2xl transform -rotate-3 group hover:rotate-0 transition-transform duration-500">
+                  <span className="text-white text-5xl mb-6">🚀</span>
+                  <p className="text-white font-black text-3xl uppercase font-display leading-none tracking-tighter">Expanding <br />Capacity</p>
+                </div>
+                <div className="bg-brand-navy aspect-square rounded-[4rem] p-12 flex flex-col justify-end shadow-2xl transform rotate-6 group hover:rotate-0 transition-transform duration-500 translate-y-16">
+                  <span className="text-white text-5xl mb-6">🌍</span>
+                  <p className="text-white font-black text-3xl uppercase font-display leading-none tracking-tighter">Regional <br />Growth</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -332,11 +332,11 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-24 text-center">
-             <div className="inline-flex items-center justify-center gap-4 bg-white/10 backdrop-blur-md px-10 py-6 rounded-full border border-white/20">
-               <span className="text-3xl">💙</span>
-               <p className="text-2xl font-black text-white font-display tracking-widest uppercase">#MunguMbele</p>
-               <span className="text-3xl">💙</span>
-             </div>
+            <div className="inline-flex items-center justify-center gap-4 bg-white/10 backdrop-blur-md px-10 py-6 rounded-full border border-white/20">
+              <span className="text-3xl">💙</span>
+              <p className="text-2xl font-black text-white font-display tracking-widest uppercase">#MunguMbele</p>
+              <span className="text-3xl">💙</span>
+            </div>
           </div>
         </div>
       </section>

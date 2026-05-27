@@ -94,13 +94,13 @@ export default function ProductsPage() {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      
+
       {/* Header with Carousel Image */}
-      <Hero imageSrc="/images/hero/Eisen-products-1920w .webp" altText="Our Products" />
+      <Hero imageSrc="/images/hero/Eisen-products--nav-1920w.webp" altText="Our Products" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex flex-col lg:flex-row gap-12">
-          
+
           {/* Filters Sidebar */}
           <aside className="w-full lg:w-64 flex-shrink-0">
             <div className="sticky top-32 space-y-8">
@@ -114,11 +114,10 @@ export default function ProductsPage() {
                     <button
                       key={cat}
                       onClick={() => setActiveCategory(cat)}
-                      className={`block w-full text-left px-4 py-2 rounded-lg transition-all ${
-                        activeCategory === cat 
-                        ? 'bg-brand-navy text-white font-bold shadow-lg' 
-                        : 'text-gray-600 hover:bg-white hover:text-brand-navy'
-                      }`}
+                      className={`block w-full text-left px-4 py-2 rounded-lg transition-all ${activeCategory === cat
+                          ? 'bg-brand-navy text-white font-bold shadow-lg'
+                          : 'text-gray-600 hover:bg-white hover:text-brand-navy'
+                        }`}
                     >
                       {cat}
                     </button>
@@ -136,11 +135,10 @@ export default function ProductsPage() {
                     <button
                       key={surface}
                       onClick={() => setActiveSurface(surface)}
-                      className={`block w-full text-left px-4 py-2 rounded-lg transition-all ${
-                        activeSurface === surface 
-                        ? 'bg-brand-gold text-brand-navy font-bold shadow-lg' 
-                        : 'text-gray-600 hover:bg-white hover:text-brand-navy'
-                      }`}
+                      className={`block w-full text-left px-4 py-2 rounded-lg transition-all ${activeSurface === surface
+                          ? 'bg-brand-gold text-brand-navy font-bold shadow-lg'
+                          : 'text-gray-600 hover:bg-white hover:text-brand-navy'
+                        }`}
                     >
                       {surface}
                     </button>
@@ -158,11 +156,10 @@ export default function ProductsPage() {
                     <button
                       key={finish}
                       onClick={() => setActiveFinish(finish)}
-                      className={`px-3 py-1 rounded-full text-xs font-bold transition-all border ${
-                        activeFinish === finish 
-                        ? 'bg-life-red border-life-red text-white shadow-md' 
-                        : 'border-gray-200 text-gray-500 hover:border-life-red hover:text-life-red'
-                      }`}
+                      className={`px-3 py-1 rounded-full text-xs font-bold transition-all border ${activeFinish === finish
+                          ? 'bg-life-red border-life-red text-white shadow-md'
+                          : 'border-gray-200 text-gray-500 hover:border-life-red hover:text-life-red'
+                        }`}
                     >
                       {finish}
                     </button>
@@ -170,7 +167,7 @@ export default function ProductsPage() {
                 </div>
               </div>
 
-              <button 
+              <button
                 onClick={() => {
                   setActiveCategory("All");
                   setActiveFinish("All");
@@ -208,7 +205,7 @@ export default function ProductsPage() {
                 <p className="text-gray-500 max-w-xs mx-auto">
                   Try adjusting your filters or search criteria to find what you're looking for.
                 </p>
-                <button 
+                <button
                   onClick={() => {
                     setActiveCategory("All");
                     setActiveFinish("All");
@@ -229,7 +226,7 @@ export default function ProductsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-brand-navy rounded-[3rem] overflow-hidden relative">
             <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
-               {/* Background pattern could go here */}
+              {/* Background pattern could go here */}
             </div>
             <div className="relative z-10 px-8 py-16 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12">
               <div className="max-w-xl text-center md:text-left">
