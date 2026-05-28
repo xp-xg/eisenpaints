@@ -13,20 +13,29 @@ const rooms = [
 ];
 
 const colors = [
-  { name: 'Pure White', hex: '#FFFFFF', description: 'Clean and bright.' },
-  { name: 'Eisen Navy', hex: '#0D3182', description: 'Our signature bold blue.' },
-  { name: 'Savannah Gold', hex: '#FDB913', description: 'Warm and energetic.' },
-  { name: 'Rift Valley Green', hex: '#8DC63F', description: 'Fresh and organic.' },
-  { name: 'Cool Mist', hex: '#E1E8ED', description: 'Modern and airy.' },
-  { name: 'Terracotta', hex: '#C0392B', description: 'Earthy and traditional.' },
-  { name: 'Morning Sky', hex: '#00AEEF', description: 'Calm and serene.' },
-  { name: 'Shadow Gray', hex: '#2C3E50', description: 'Sophisticated and deep.' }
+  { name: 'Pure White', hex: '#FFFFFF', description: 'Clean and bright.', image: '/images/visualizer/Eisen-white.png' },
+  { name: 'Eisen Navy', hex: '#0D3182', description: 'Our signature bold blue.', image: '/images/visualizer/Eisen-navy.png' },
+  { name: 'Savannah Gold', hex: '#FDB913', description: 'Warm and energetic.', image: '/images/visualizer/Eisen-savannah-gold.png' },
+  { name: 'Rift Valley Green', hex: '#8DC63F', description: 'Fresh and organic.', image: '/images/visualizer/Eisen-riftvalleygreen.png' },
+  { name: 'Cool Mist', hex: '#E1E8ED', description: 'Modern and airy.', image: '/images/visualizer/Eisen-coolmist.png' },
+  { name: 'Terracotta', hex: '#C0392B', description: 'Earthy and traditional.', image: '/images/visualizer/Eisen-terracotta.png' },
+  { name: 'Morning Sky', hex: '#00AEEF', description: 'Calm and serene.', image: '/images/visualizer/Eisen-morningsky.png' },
+  { name: 'Shadow Gray', hex: '#2C3E50', description: 'Sophisticated and deep.', image: '/images/visualizer/Eisen-shadowgray.png' }
 ];
 
 export default function VisualizerPage() {
-  const [selectedRoom, setSelectedRoom] = useState(rooms[0]);
+  const [selectedRoom] = useState(rooms[0]);
   const [selectedColor, setSelectedColor] = useState(colors[0]);
-  const [intensity, setIntensity] = useState(0.4);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const handleColorSelect = (color: typeof colors[0]) => {
+    if (color.name === selectedColor.name) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setSelectedColor(color);
+      setIsTransitioning(false);
+    }, 300);
+  };
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -40,43 +49,40 @@ export default function VisualizerPage() {
           {/* Visualizer Area */}
           <div className="flex-1 space-y-6">
             <div className="relative aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-2xl bg-black group">
-              {/* The Room Image */}
+              {/* The Room / Color Scene Image */}
               <Image
-                src={selectedRoom.image}
-                alt={selectedRoom.name}
+                src={selectedColor.image}
+                alt={`${selectedColor.name} room preview`}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className={`object-cover transition-all duration-700 group-hover:scale-105 ${isTransitioning ? 'opacity-0 scale-105' : 'opacity-100 scale-100'}`}
+                priority
               />
 
-              {/* The Color Overlay */}
-              <div
-                className="absolute inset-0 transition-colors duration-500 pointer-events-none"
-                style={{
-                  backgroundColor: selectedColor.hex,
-                  mixBlendMode: 'multiply',
-                  opacity: intensity
-                }}
-              />
+              {/* Color badge overlay */}
+              <div className="absolute top-6 right-6 flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+                <span
+                  className="w-4 h-4 rounded-full border-2 border-white/60 shadow-sm flex-shrink-0"
+                  style={{ backgroundColor: selectedColor.hex }}
+                />
+                <span className="text-white font-semibold text-sm">{selectedColor.name}</span>
+              </div>
 
               <div className="absolute bottom-8 left-8 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 text-white font-bold text-sm">
                 Viewing: {selectedRoom.name}
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <h3 className="text-lg font-bold text-brand-navy mb-1">Color Intensity</h3>
-                <p className="text-sm text-gray-400">Adjust the saturation of the preview</p>
-              </div>
-              <input
-                type="range"
-                min="0.1"
-                max="0.8"
-                step="0.05"
-                value={intensity}
-                onChange={(e) => setIntensity(parseFloat(e.target.value))}
-                className="w-full md:w-64 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-life-cyan"
+            {/* Selected color info bar */}
+            <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 flex items-center gap-6">
+              <div
+                className="w-14 h-14 rounded-2xl flex-shrink-0 shadow-md border border-gray-200"
+                style={{ backgroundColor: selectedColor.hex }}
               />
+              <div className="flex-1">
+                <h3 className="text-lg font-bold text-brand-navy">{selectedColor.name}</h3>
+                <p className="text-sm text-gray-400">{selectedColor.description}</p>
+              </div>
+              <div className="text-xs font-mono text-gray-400 uppercase tracking-widest">{selectedColor.hex}</div>
             </div>
           </div>
 
@@ -92,19 +98,26 @@ export default function VisualizerPage() {
                 {colors.map((color) => (
                   <button
                     key={color.name}
-                    onClick={() => setSelectedColor(color)}
-                    className={`aspect-square rounded-2xl transition-all border-4 ${selectedColor.hex === color.hex
+                    onClick={() => handleColorSelect(color)}
+                    className={`aspect-square rounded-2xl transition-all border-4 ${selectedColor.name === color.name
                         ? 'border-brand-navy scale-110 shadow-lg'
-                        : 'border-transparent hover:scale-105'
+                        : 'border-transparent hover:scale-105 hover:shadow-md'
                       }`}
                     style={{ backgroundColor: color.hex }}
                     title={color.name}
+                    aria-label={`Select ${color.name}`}
                   />
                 ))}
               </div>
 
               <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100 mb-8">
-                <h4 className="font-bold text-brand-navy mb-1">{selectedColor.name}</h4>
+                <div className="flex items-center gap-3 mb-2">
+                  <span
+                    className="w-5 h-5 rounded-full border-2 border-gray-300 flex-shrink-0"
+                    style={{ backgroundColor: selectedColor.hex }}
+                  />
+                  <h4 className="font-bold text-brand-navy">{selectedColor.name}</h4>
+                </div>
                 <p className="text-sm text-gray-500">{selectedColor.description}</p>
                 <div className="mt-4 text-[10px] font-mono text-gray-400 uppercase tracking-widest">{selectedColor.hex}</div>
               </div>

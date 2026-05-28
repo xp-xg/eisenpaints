@@ -14,7 +14,7 @@ const PaintRollerButton: React.FC<PaintRollerButtonProps> = ({ isScrolled, class
 
   return (
     <Link 
-      href="/contact"
+      href="/contact#contact-name"
       className={`relative group flex items-center transition-all duration-300 ${className} ${isHovered ? 'scale-105' : 'scale-100'} active:scale-95`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

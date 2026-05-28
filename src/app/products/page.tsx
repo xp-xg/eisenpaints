@@ -221,27 +221,7 @@ export default function ProductsPage() {
         </div>
       </div>
 
-      {/* Product Finder CTA */}
-      <section className="py-24 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-brand-navy rounded-[3rem] overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
-              {/* Background pattern could go here */}
-            </div>
-            <div className="relative z-10 px-8 py-16 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12">
-              <div className="max-w-xl text-center md:text-left">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Need help choosing the right paint?</h2>
-                <p className="text-white/70 text-lg">
-                  Answer a few questions about your project and our AI-guided finder will recommend the perfect products for you.
-                </p>
-              </div>
-              <button className="px-10 py-5 bg-life-cyan text-brand-navy font-black rounded-full hover:bg-white hover:scale-105 transition-all duration-300 shadow-2xl shadow-life-cyan/20">
-                Launch Product Finder
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
     </main>
   );

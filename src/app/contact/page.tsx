@@ -1,10 +1,22 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Hero from '@/components/Hero';
 
 const ContactPage = () => {
+  const nameInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (window.location.hash === '#contact-name') {
+      const el = nameInputRef.current;
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => el.focus(), 400);
+      }
+    }
+  }, []);
+
   return (
     <div className="pb-24 bg-white selection:bg-life-cyan selection:text-white flex flex-col w-full">
       {/* Hero Section */}
@@ -21,7 +33,7 @@ const ContactPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
                   <label className="text-xs font-black uppercase tracking-widest text-brand-navy/60 px-1">Full Name</label>
-                  <input type="text" className="w-full bg-gray-50/50 border-0 border-b-2 border-gray-100 rounded-2xl px-6 py-4 focus:outline-none focus:ring-0 focus:border-life-cyan focus:bg-white transition-all text-brand-navy font-bold shadow-inner" placeholder="John Doe" />
+                  <input id="contact-name" ref={nameInputRef} type="text" className="w-full bg-gray-50/50 border-0 border-b-2 border-gray-100 rounded-2xl px-6 py-4 focus:outline-none focus:ring-0 focus:border-life-cyan focus:bg-white transition-all text-brand-navy font-bold shadow-inner" placeholder="John Doe" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-black uppercase tracking-widest text-brand-navy/60 px-1">Email Address</label>

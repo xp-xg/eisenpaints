@@ -28,7 +28,6 @@ const Navbar = () => {
   const toolLinks = [
     { name: 'Paint Calculator', href: '/calculator', icon: '📐' },
     { name: 'Color Visualizer', href: '/visualizer', icon: '🎨' },
-    { name: 'Resources', href: '/resources', icon: '📚' },
   ];
 
   // Navbar is absolute to float over the hero image, but it scrolls away with the page
