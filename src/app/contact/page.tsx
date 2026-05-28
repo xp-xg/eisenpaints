@@ -1,11 +1,18 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Hero from '@/components/Hero';
 
 const ContactPage = () => {
   const nameInputRef = useRef<HTMLInputElement>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    projectType: 'Residential Interior',
+    message: ''
+  });
 
   useEffect(() => {
     if (window.location.hash === '#contact-name') {
@@ -16,6 +23,21 @@ const ContactPage = () => {
       }
     }
   }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = `New Quote Request – ${formData.projectType}`;
+    const body = [
+      `Full Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Phone: ${formData.phone}`,
+      `Project Type: ${formData.projectType}`,
+      ``,
+      `Project Details & Requirements:`,
+      formData.message,
+    ].join('\n');
+    window.location.href = `mailto:info@eisenpaints.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
 
   return (
     <div className="pb-24 bg-white selection:bg-life-cyan selection:text-white flex flex-col w-full">
@@ -29,27 +51,27 @@ const ContactPage = () => {
             <h2 className="text-4xl font-black text-brand-navy mb-2">Request a Quote</h2>
             <p className="text-gray-500 mb-10 font-medium">Fill out the form below and our technical team will contact you within 24 hours.</p>
 
-            <form className="space-y-8">
+            <form className="space-y-8" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
                   <label className="text-xs font-black uppercase tracking-widest text-brand-navy/60 px-1">Full Name</label>
-                  <input id="contact-name" ref={nameInputRef} type="text" className="w-full bg-gray-50/50 border-0 border-b-2 border-gray-100 rounded-2xl px-6 py-4 focus:outline-none focus:ring-0 focus:border-life-cyan focus:bg-white transition-all text-brand-navy font-bold shadow-inner" placeholder="John Doe" />
+                  <input id="contact-name" ref={nameInputRef} type="text" required className="w-full bg-gray-50/50 border-0 border-b-2 border-gray-100 rounded-2xl px-6 py-4 focus:outline-none focus:ring-0 focus:border-life-cyan focus:bg-white transition-all text-brand-navy font-bold shadow-inner" placeholder="John Doe" onChange={(e) => setFormData({...formData, name: e.target.value})} />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-black uppercase tracking-widest text-brand-navy/60 px-1">Email Address</label>
-                  <input type="email" className="w-full bg-gray-50/50 border-0 border-b-2 border-gray-100 rounded-2xl px-6 py-4 focus:outline-none focus:ring-0 focus:border-life-cyan focus:bg-white transition-all text-brand-navy font-bold shadow-inner" placeholder="john@example.com" />
+                  <input type="email" required className="w-full bg-gray-50/50 border-0 border-b-2 border-gray-100 rounded-2xl px-6 py-4 focus:outline-none focus:ring-0 focus:border-life-cyan focus:bg-white transition-all text-brand-navy font-bold shadow-inner" placeholder="john@example.com" onChange={(e) => setFormData({...formData, email: e.target.value})} />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
                   <label className="text-xs font-black uppercase tracking-widest text-brand-navy/60 px-1">Phone Number</label>
-                  <input type="tel" className="w-full bg-gray-50/50 border-0 border-b-2 border-gray-100 rounded-2xl px-6 py-4 focus:outline-none focus:ring-0 focus:border-life-cyan focus:bg-white transition-all text-brand-navy font-bold shadow-inner" placeholder="+254 --- --- ---" />
+                  <input type="tel" required className="w-full bg-gray-50/50 border-0 border-b-2 border-gray-100 rounded-2xl px-6 py-4 focus:outline-none focus:ring-0 focus:border-life-cyan focus:bg-white transition-all text-brand-navy font-bold shadow-inner" placeholder="+254 --- --- ---" onChange={(e) => setFormData({...formData, phone: e.target.value})} />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-black uppercase tracking-widest text-brand-navy/60 px-1">Project Type</label>
                   <div className="relative">
-                    <select className="w-full bg-gray-50/50 border-0 border-b-2 border-gray-100 rounded-2xl px-6 py-4 focus:outline-none focus:ring-0 focus:border-life-cyan focus:bg-white transition-all text-brand-navy font-bold shadow-inner appearance-none">
+                    <select className="w-full bg-gray-50/50 border-0 border-b-2 border-gray-100 rounded-2xl px-6 py-4 focus:outline-none focus:ring-0 focus:border-life-cyan focus:bg-white transition-all text-brand-navy font-bold shadow-inner appearance-none" onChange={(e) => setFormData({...formData, projectType: e.target.value})}>
                       <option>Residential Interior</option>
                       <option>Residential Exterior</option>
                       <option>Commercial/Office</option>
@@ -65,15 +87,10 @@ const ContactPage = () => {
 
               <div className="space-y-2">
                 <label className="text-xs font-black uppercase tracking-widest text-brand-navy/60 px-1">Project Details & Requirements</label>
-                <textarea rows={5} className="w-full bg-gray-50/50 border-0 border-b-2 border-gray-100 rounded-[2rem] px-8 py-6 focus:outline-none focus:ring-0 focus:border-life-cyan focus:bg-white transition-all text-brand-navy font-bold shadow-inner" placeholder="Tell us about the surface area, current condition, and your desired finish..."></textarea>
+                <textarea rows={5} required className="w-full bg-gray-50/50 border-0 border-b-2 border-gray-100 rounded-[2rem] px-8 py-6 focus:outline-none focus:ring-0 focus:border-life-cyan focus:bg-white transition-all text-brand-navy font-bold shadow-inner" placeholder="Tell us about the surface area, current condition, and your desired finish..." onChange={(e) => setFormData({...formData, message: e.target.value})}></textarea>
               </div>
 
-              <div className="flex items-center space-x-2 px-1">
-                <input type="checkbox" id="terms" className="w-5 h-5 rounded border-gray-300 text-brand-navy focus:ring-life-cyan" />
-                <label htmlFor="terms" className="text-sm text-gray-500 font-medium">I agree to the terms and privacy policy</label>
-              </div>
-
-              <button className="w-full group relative overflow-hidden bg-brand-navy text-white font-black uppercase tracking-[0.2em] py-6 rounded-[2rem] transition-all duration-500 shadow-2xl hover:shadow-life-cyan/20">
+              <button type="submit" className="w-full group relative overflow-hidden bg-brand-navy text-white font-black uppercase tracking-[0.2em] py-6 rounded-[2rem] transition-all duration-500 shadow-2xl hover:shadow-life-cyan/20">
                 <div className="absolute inset-0 bg-black/10"></div>
                 <span className="relative z-10 flex items-center justify-center space-x-3">
                   <span>Submit Quote Request</span>
@@ -150,20 +167,16 @@ const ContactPage = () => {
       </div>
 
       {/* Map Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 mb-12">
-        <div className="h-[500px] w-full rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white group relative">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3989.771452636718!2d36.0544243!3d-0.2854342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMTcnMDcuNiJTIDM2wrAwMycyNS4yIkU!5e0!3m2!1sen!2ske!4v1714896123456!5m2!1sen!2ske"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="grayscale group-hover:grayscale-0 transition-all duration-1000 transform group-hover:scale-105"
-          ></iframe>
-          <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_100px_rgba(0,0,0,0.2)]"></div>
-        </div>
+      <div className="w-full mt-16 h-[500px]">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3989.771452636718!2d36.0544243!3d-0.2854342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMTcnMDcuNiJTIDM2wrAwMycyNS4yIkU!5e0!3m2!1sen!2ske!4v1714896123456!5m2!1sen!2ske"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </div>
   );
