@@ -41,7 +41,7 @@ export default function VisualizerPage() {
     <main className="min-h-screen bg-gray-50">
 
       {/* Header with Carousel Image */}
-      <Hero imageSrc="/images/hero/Eisen-calculator--nav-1920w.webp" altText="Color Visualizer" />
+      <Hero imageSrc="/images/hero/Eisen-contact-1920w.webp" altText="Color Visualizer" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col lg:flex-row gap-12">
@@ -100,8 +100,8 @@ export default function VisualizerPage() {
                     key={color.name}
                     onClick={() => handleColorSelect(color)}
                     className={`aspect-square rounded-2xl transition-all border-4 ${selectedColor.name === color.name
-                        ? 'border-brand-navy scale-110 shadow-lg'
-                        : 'border-transparent hover:scale-105 hover:shadow-md'
+                      ? 'border-brand-navy scale-110 shadow-lg'
+                      : 'border-transparent hover:scale-105 hover:shadow-md'
                       }`}
                     style={{ backgroundColor: color.hex }}
                     title={color.name}
