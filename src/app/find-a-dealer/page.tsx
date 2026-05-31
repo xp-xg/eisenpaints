@@ -11,8 +11,8 @@ const locations = [
         name: "Nairobi Road Business Centre",
         address: "Opposite Nairobi Rd. T-Junction, Pioneer",
         contact: "+254 113 713 285",
-        type: "Branch Office",
-        mapUrl: "https://maps.google.com"
+        email: "eldoret@eisenpaints.co.ke",
+        type: "Branch Office"
       }
     ]
   },
@@ -24,21 +24,8 @@ const locations = [
         name: "Eisen Industries Ltd HQ",
         address: "Printing press road, industrial area",
         contact: "+254 758 094 985",
-        type: "Manufacturing & HQ",
-        mapUrl: "https://maps.google.com"
-      }
-    ]
-  },
-  {
-    city: "Nairobi",
-    region: "Nairobi County",
-    dealers: [
-      {
-        name: "Nairobi Sales Office",
-        address: "Mombasa Road, Syokimau",
-        contact: "+254 733 000 000",
-        type: "Corporate Sales",
-        mapUrl: "https://maps.google.com"
+        email: "info@eisenpaints.co.ke",
+        type: "Manufacturing & HQ"
       }
     ]
   }
@@ -74,7 +61,10 @@ export default function DealerLocatorPage() {
             <div className="bg-brand-gold p-6 rounded-3xl shadow-lg text-brand-navy">
               <h3 className="text-lg font-bold mb-2">Bulk Orders?</h3>
               <p className="text-sm opacity-80 mb-4 font-medium">Contact our corporate sales department for large-scale projects and contractor pricing.</p>
-              <a href="/contact" className="inline-block px-4 py-2 bg-brand-navy text-white text-xs font-bold rounded-lg hover:bg-white hover:text-brand-navy transition-all">Contact Sales</a>
+              <div className="flex flex-wrap gap-2">
+                <a href="/contact" className="inline-block px-4 py-2 bg-brand-navy text-white text-xs font-bold rounded-lg hover:bg-white hover:text-brand-navy transition-all">Contact Sales</a>
+                <a href="tel:+254758094985" className="inline-block px-4 py-2 bg-white text-brand-navy text-xs font-bold rounded-lg hover:bg-brand-navy hover:text-white transition-all">Call +254 758 094 985</a>
+              </div>
             </div>
           </div>
 
@@ -111,12 +101,10 @@ export default function DealerLocatorPage() {
 
                       <div className="flex space-x-3">
                         <a
-                          href={dealer.mapUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          href={`mailto:${dealer.email}`}
                           className="flex-1 py-3 px-4 bg-gray-50 text-brand-navy text-xs font-bold rounded-xl text-center hover:bg-brand-navy hover:text-white transition-all"
                         >
-                          View Map
+                          ✉ Email Us
                         </a>
                         <a
                           href={`tel:${dealer.contact.replace(/\s/g, '')}`}

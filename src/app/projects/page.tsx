@@ -5,109 +5,109 @@ import Hero from '@/components/Hero';
 
 const projects = [
   {
-    title: "Naivasha Modern Market",
-    location: "Naivasha, Kenya",
-    description: "A large-scale commercial hub featuring our Exterio silicon-based all-weather protection for long-lasting durability.",
+    title: "Urban Mixed-Use Complex",
+    location: "Regional Site",
+    description: "A large-scale commercial hub featuring our all-weather protection for long-lasting durability.",
     image: "/images/projects/Eisen_completed_project1.jpeg",
     category: "Commercial"
   },
   {
-    title: "Grace Apartments",
-    location: "Eldoret, Kenya",
-    description: "Modern residential development using our Vinyl Silk Emulsion for elegant, washable interior finishes.",
+    title: "High-Density Apartment Block",
+    location: "Regional Site",
+    description: "Modern residential development using our premium emulsion for elegant, washable interior finishes.",
     image: "/images/projects/Eisen_completed_project2.jpeg",
     category: "Residential"
   },
   {
-    title: "Quickmart Kisii",
-    location: "Kisii, Kenya",
-    description: "Retail chain hub with high-traffic durability requirements met by Eisen specialty coatings.",
+    title: "Contemporary Residential Suites",
+    location: "Regional Site",
+    description: "Premium housing project showcasing the vibrant color consistency of our architectural coatings.",
     image: "/images/projects/Eisen_completed_project3.jpeg",
-    category: "Commercial"
+    category: "Residential"
   },
   {
-    title: "Crest Village",
-    location: "Nakuru, Kenya",
-    description: "Premium housing project showcasing the vibrant color consistency of our architectural coatings.",
+    title: "Private Suburban Residence",
+    location: "Regional Site",
+    description: "A residential masterpiece featuring our eco-friendly, low-VOC paint range for healthy living spaces.",
     image: "/images/projects/Eisen_completed_project4.jpeg",
     category: "Residential"
   },
   {
-    title: "Westside Plaza",
-    location: "Nairobi, Kenya",
+    title: "Modern Mid-Rise Development",
+    location: "Regional Site",
     description: "A striking architectural landmark utilizing our specialty textures for a modern, weather-resistant facade.",
     image: "/images/projects/Eisen_completed_project5.jpeg",
     category: "Commercial"
   },
   {
-    title: "Riverside Heights",
-    location: "Eldoret, Kenya",
+    title: "Premium Condominium Estate",
+    location: "Regional Site",
     description: "Luxury condominium complex featuring premium interior coatings for a sophisticated, high-end feel.",
     image: "/images/projects/Eisen_completed_project6.jpeg",
     category: "Residential"
   },
   {
-    title: "Urban Residential Heights",
-    location: "Nakuru, Kenya",
+    title: "Urban Housing Heights",
+    location: "Regional Site",
     description: "High-density residential project demonstrating cost-effective yet durable coating solutions.",
     image: "/images/projects/Eisen_completed_project7.jpeg",
     category: "Residential"
   },
   {
-    title: "Garden Estate",
-    location: "Nairobi, Kenya",
-    description: "A residential masterpiece featuring our eco-friendly, low-VOC paint range for healthy living spaces.",
+    title: "Large-Scale Residential Estate",
+    location: "Regional Site",
+    description: "Expansive gated community development featuring a harmonious palette of Eisen earth tones.",
     image: "/images/projects/Eisen_completed_project8.jpeg",
     category: "Residential"
   },
   {
-    title: "Industrial Park Alpha",
-    location: "Mombasa, Kenya",
-    description: "Heavy-duty protective coatings for massive warehouse structures, designed to withstand coastal humidity.",
+    title: "Central District Tower",
+    location: "Regional Site",
+    description: "Multi-story commercial tower protected by our high-build architectural coatings for superior coverage.",
     image: "/images/projects/Eisen_completed_project9.jpeg",
-    category: "Industrial"
+    category: "Commercial"
   },
   {
-    title: "Blue Breeze Suites",
-    location: "Malindi, Kenya",
+    title: "Coastal Hospitality Suites",
+    location: "Regional Site",
     description: "Coastal hospitality project utilizing salt-resistant exterior finishes for long-term vibrant color.",
     image: "/images/projects/Eisen_completed_project10.jpeg",
     category: "Hospitality"
   },
   {
-    title: "Corporate Headquarters",
-    location: "Nairobi, Kenya",
-    description: "Modern office complex utilizing our professional grade interior paints for a sophisticated, durable finish.",
+    title: "Corporate Distribution Center",
+    location: "Regional Site",
+    description: "Modern corporate facility utilizing our professional grade interior paints for a sophisticated, durable finish.",
     image: "/images/projects/Eisen_completed_project11_office.jpeg",
     category: "Commercial"
   },
   {
-    title: "Skyline Towers",
-    location: "Nakuru, Kenya",
-    description: "Multi-story residential tower protected by our high-build architectural coatings for superior coverage.",
+    title: "Contemporary Private Villa",
+    location: "Regional Site",
+    description: "Exquisite private villa project using our specialized surface preparation products for a flawless finish.",
     image: "/images/projects/Eisen_completed_project12.jpeg",
     category: "Residential"
   },
   {
-    title: "Pine Ridge Community",
-    location: "Eldoret, Kenya",
-    description: "Large-scale gated community development featuring a harmonious palette of Eisen earth tones.",
+    title: "Suburban Apartment Complex",
+    location: "Regional Site",
+    description: "Multi-unit residential complex featuring our vibrant, fade-resistant exterior coatings.",
     image: "/images/projects/Eisen_completed_project13.jpeg",
     category: "Residential"
   },
   {
-    title: "Tech Hub Nakuru",
-    location: "Nakuru, Kenya",
-    description: "Innovation center featuring vibrant color accents and easy-to-clean wall coatings for dynamic spaces.",
+    title: "Multi-Story Construction Project",
+    location: "Regional Site",
+    description: "Ongoing commercial construction phase utilizing our heavy-duty protective primers and undercoats.",
     image: "/images/projects/Eisen_completed_project14.jpeg",
-    category: "Institutional"
+    category: "Commercial"
   },
   {
-    title: "Legacy Manor",
-    location: "Naivasha, Kenya",
-    description: "Exquisite heritage-style restoration project using our specialized surface preparation products.",
+    title: "Commercial Retail Hub",
+    location: "Regional Site",
+    description: "Retail chain hub with high-traffic durability requirements met by Eisen specialty coatings.",
     image: "/images/projects/Eisen_completed_project15.jpeg",
-    category: "Residential"
+    category: "Commercial"
   }
 ];
 
