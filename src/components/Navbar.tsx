@@ -46,18 +46,17 @@ const Navbar = () => {
 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-start pt-4">
-          {/* Logo & Award */}
-
-          {/* Logo is now baked into the page hero images */}
+        <div className="flex justify-between items-center pt-4">
+          {/* Spacer for the baked-in logo to prevent overlap */}
+          <div className="w-32 2xl:w-64 hidden lg:block flex-shrink-0"></div>
 
           {/* Desktop Nav - Brushstroke links floating on the image */}
-          <div className="hidden lg:flex items-center space-x-2 font-black text-[11px] uppercase tracking-[0.2em]">
+          <div className="hidden lg:flex items-center space-x-1 2xl:space-x-2 font-black text-[11px] uppercase tracking-[0.2em] w-full justify-end">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="relative group px-10 py-5 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="relative group px-4 py-3 2xl:px-6 2xl:py-4 flex items-center justify-center transition-all duration-300 hover:scale-110"
               >
                 <div
                   className="absolute inset-0 bg-white shadow-xl transition-all duration-500 group-hover:bg-life-cyan"
@@ -70,7 +69,7 @@ const Navbar = () => {
             ))}
 
             <div className="relative group/tools" onMouseEnter={() => setIsToolsOpen(true)} onMouseLeave={() => setIsToolsOpen(false)}>
-              <button className="relative px-10 py-5 flex items-center justify-center transition-all duration-300 hover:scale-110 group-hover/tools:scale-110">
+              <button className="relative px-4 py-3 2xl:px-6 2xl:py-4 flex items-center justify-center transition-all duration-300 hover:scale-110 group-hover/tools:scale-110">
                 <div
                   className="absolute inset-0 bg-white shadow-xl transition-all duration-500 group-hover/tools:bg-life-cyan"
                   style={{ filter: 'url(#brush-effect)' }}
@@ -109,7 +108,7 @@ const Navbar = () => {
 
             <Link
               href="/find-a-dealer"
-              className="relative group px-10 py-5 flex items-center justify-center transition-all duration-300 hover:scale-110"
+              className="relative group px-4 py-3 2xl:px-6 2xl:py-4 flex items-center justify-center transition-all duration-300 hover:scale-110"
             >
               <div
                 className="absolute inset-0 bg-white shadow-xl transition-all duration-500 group-hover:bg-life-cyan"
@@ -125,8 +124,8 @@ const Navbar = () => {
             </div>
 
             {/* "Life is colourful" brand tagline — decorative only */}
-            <div className="relative flex items-center ml-2 pointer-events-none select-none">
-              <div className="relative w-[200px] h-[55px] overflow-visible">
+            <div className="relative flex items-center ml-1 2xl:ml-4 pointer-events-none select-none flex-shrink-0">
+              <div className="relative w-[100px] h-[35px] 2xl:w-[150px] 2xl:h-[45px] overflow-visible">
                 <Image
                   src="/images/life-is-colourful.png"
                   alt="Life is colourful"

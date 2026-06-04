@@ -13,18 +13,16 @@ const Hero = ({
   altText = "Eisen Paints Hero Showcase"
 }: HeroProps) => {
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-white">
-      {/* Background Image - Set back to object-cover to "fill the whole section" as requested */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={imageSrc}
-          alt={altText}
-          fill
-          className="object-cover transition-all duration-700"
-          priority
-          sizes="100vw"
-        />
-      </div>
+    <section className="relative w-full overflow-hidden bg-white flex justify-center">
+      <Image
+        src={imageSrc}
+        alt={altText}
+        width={1920}
+        height={1020}
+        className="w-full h-auto object-contain"
+        priority
+        sizes="100vw"
+      />
     </section>
   );
 };
