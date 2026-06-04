@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ContactFAB from "@/components/ContactFAB";
 import ScrollToTop from "@/components/ScrollToTop";
 
+
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
