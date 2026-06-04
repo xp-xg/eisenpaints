@@ -5,13 +5,13 @@ import BrandBadge from './BrandBadge';
 
 const Footer = () => {
   return (
-    <footer className="bg-brand-navy text-white pt-20 pb-10 selection:bg-life-cyan selection:text-white">
+    <footer className="bg-brand-black text-white pt-20 pb-10 selection:bg-life-cyan selection:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-16">
           {/* Brand Column - Centered as per "First Image" alignment */}
           <div className="col-span-1 md:col-span-1 flex flex-col items-center text-center md:items-start md:text-left">
             <div className="mb-10">
-               <BrandBadge light={false} align="center" className="scale-110 md:scale-100 md:-ml-4" />
+               <BrandBadge light={true} align="center" className="scale-110 md:scale-100 md:-ml-4" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-8 font-medium">
               Engineering the future of African architecture with precision German technology and vibrant, long-lasting color solutions.

@@ -13,6 +13,7 @@ const clients = [
   { name: 'The Queens Garden', logo: '/images/our clients/the queens garden.png' },
   { name: 'Zion Hotel', logo: '/images/our clients/zion hotel.png' },
   { name: 'PCEA', logo: '/images/our clients/pcea.png' },
+  { name: 'Quickmart', logo: '/images/our clients/quickmart_logo.png' },
 ];
 
 const ClientCarousel = () => {

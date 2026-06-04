@@ -39,9 +39,9 @@ const BrandBadge: React.FC<BrandBadgeProps> = ({
       </div>
 
       {/* Overlapping Circles - No borders, slight intersection */}
-      <div className={`flex items-center ${circleAlignStyles[align]} -space-x-2.5`}>
+      <div className={`flex items-center ${circleAlignStyles[align]} -space-x-2.5 mt-4`}>
         {/* Black Circle */}
-        <div className="w-12 h-12 bg-black rounded-full relative z-10"></div>
+        <div className={`w-12 h-12 bg-black rounded-full relative z-10 ${light ? 'border-2 border-white/10' : ''}`}></div>
         {/* Red Circle (Middle) */}
         <div className="w-12 h-12 bg-[#E30613] rounded-full relative z-20"></div>
         {/* Gold Circle */}

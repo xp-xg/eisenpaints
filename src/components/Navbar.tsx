@@ -46,7 +46,7 @@ const Navbar = () => {
 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center pt-4">
+        <div className="flex justify-end lg:justify-between items-center pt-4">
           {/* Spacer for the baked-in logo to prevent overlap */}
           <div className="w-32 2xl:w-64 hidden lg:block flex-shrink-0"></div>
 
@@ -125,7 +125,7 @@ const Navbar = () => {
 
             {/* "Life is colourful" brand tagline — decorative only */}
             <div className="relative flex items-center ml-1 2xl:ml-4 pointer-events-none select-none flex-shrink-0">
-              <div className="relative w-[100px] h-[35px] 2xl:w-[150px] 2xl:h-[45px] overflow-visible">
+              <div className="relative w-[160px] h-[50px] 2xl:w-[200px] 2xl:h-[60px] overflow-visible">
                 <Image
                   src="/images/life-is-colourful.png"
                   alt="Life is colourful"
